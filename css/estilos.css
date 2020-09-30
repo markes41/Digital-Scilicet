@@ -1,3 +1,28 @@
 body{
     background-color: #FDE3F9;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.publicidad{
+    text-align: center;
+    
+}
+
+.jumbotron{
+    background-image: url('../img/home.jpg');
+}
+
+.barraEnvio{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-deck{
+    margin-top: 2rem;
+}
+
+.card{
+    background-color: #FDE3F9;
 }
