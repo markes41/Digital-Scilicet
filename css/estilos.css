@@ -1,7 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
 body{
-    background-color: #FDE3F9;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    background-color: #e6e7e8;
+    font-family: "Poppins", "sans-serif";
+    min-height: 100vh;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
 }
 
 .publicidad{
@@ -9,20 +16,34 @@ body{
     
 }
 
-.jumbotron{
-    background-image: url('../img/home.jpg');
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
 }
 
-.barraEnvio{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.menu li>a{
+    color: #777777;
+    padding-right: 1rem;
 }
 
-.card-deck{
-    margin-top: 2rem;
+.menu ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0%;
 }
 
-.card{
-    background-color: #FDE3F9;
+.menu a:hover{
+    text-decoration: none;
+    color: #434343;
+}
+
+.logo{
+    font-size: 2rem;
+}
+
+.alert{
+    text-align: center;
+    background-color: #B20B4F;
 }
