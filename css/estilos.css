@@ -12,14 +12,26 @@ header{
 }
 
 .publicidad{
+    color: #e6e7e8;
     text-align: center;
+    background-color: #B20B4F;
+    padding: .75rem;
     
+}
+
+.publicidad a{
+    text-decoration: none;
+    color: #e6e6e6;
+}
+
+.publicidad a:hover{
+    color: #CCCCCC;
 }
 
 .container{
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0.5rem;
     align-items: center;
 }
 
@@ -40,10 +52,22 @@ header{
 }
 
 .logo{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .alert{
     text-align: center;
     background-color: #B20B4F;
+    margin-bottom: 0%;
+}
+
+p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.textImg{
+    position: relative;
+    top: -100px;
+    text-align: center;
 }
