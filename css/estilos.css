@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
 body{
-    background-color: #e6e7e8;
+    background-color: #f4f4f4;
     font-family: "Poppins", "sans-serif";
-    min-height: 100vh;
+    
+    
 }
 
 header{
@@ -66,8 +67,39 @@ p{
     margin-bottom: 0;
 }
 
-.textImg{
-    position: relative;
-    top: -100px;
+.info{
     text-align: center;
+}
+
+.btn{
+    padding: 1rem 4rem;
+    margin: 1rem auto;
+}
+
+.parrafoCursos{
+    background-image: url("../img/header.jpg");
+    padding: 15.1rem 0;
+    font-size: 1.8rem;
+    color: #e6e6e6;
+}
+
+.imgGoal{
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+.cardCursos{
+    text-align: center;
+    color: #777777;
+}
+
+.goal{
+    font-size: 1.5rem;
+}
+
+.mainTextGoal{
+    text-align: center;
+    color: #000000;
+    font-size: 2rem;
+    margin: 4rem;
 }
