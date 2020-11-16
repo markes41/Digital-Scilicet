@@ -1,6 +1,14 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+body{
+    background-color: #e6e7e8;
+    font-family: "Poppins", "sans-serif";
+    margin: 0;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -24,6 +32,70 @@ a {
   border-color: #1861ac;
 }
 
+.btn{
+  padding: 1rem 4rem;
+  margin: 1rem auto;
+}
+
+.parrafoCursos{
+  background-image: url("../img/header.jpg");
+  padding: 16.5rem 0;
+  font-size: 1.8rem;
+  color: #e6e6e6;
+  background-size: cover;
+}
+
+.info{
+  text-align: center;
+}
+
+.cardCursos{
+  text-align: center;
+  color: #777777;
+}
+
+.goal{
+  font-size: 1.5rem;
+}
+
+.mainTextGoal{
+  text-align: center;
+  color: #000000;
+  font-size: 2rem;
+  margin: 4rem;
+} 
+
+.mainTextGoal{
+  text-align: center;
+  color: #000000;
+  font-size: 2rem;
+  margin: 4rem;
+} 
+
+.modalidad{
+  background-image: url("../img/publicity1.jpg");
+  color: #e6e7e8;
+  align-items: center;
+  background-size: cover;
+  padding: 10rem 0;
+  display: flex;
+}
+
+.linea{
+  border-left-width: 4px;
+  border-left-color: #B20B4F;
+  border-left-style: solid;
+  padding: 0px 256px 0px 24px;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.distancia{
+  text-align: right;
+  margin-right: 1rem;
+  font-size: 48px;
+  padding: 0px 24px 0px 256px;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
