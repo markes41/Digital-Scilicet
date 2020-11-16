@@ -96,6 +96,17 @@ a {
   font-size: 48px;
   padding: 0px 24px 0px 256px;
 }
+
+.row{
+  margin-top: 1rem;
+}
+
+.cursosTxt{
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem;
+  color: #000000;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
