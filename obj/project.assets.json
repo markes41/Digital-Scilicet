@@ -9193,11 +9193,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mark\\Desktop\\Digital-Scilicet\\DigitalScilicet.csproj",
+      "projectUniqueName": "C:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\DigitalScilicet.csproj",
       "projectName": "DigitalScilicet",
-      "projectPath": "C:\\Users\\Mark\\Desktop\\Digital-Scilicet\\DigitalScilicet.csproj",
+      "projectPath": "C:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\DigitalScilicet.csproj",
       "packagesPath": "C:\\Users\\Mark\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mark\\Desktop\\Digital-Scilicet\\obj\\",
+      "outputPath": "C:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mark\\AppData\\Roaming\\NuGet\\NuGet.Config",
