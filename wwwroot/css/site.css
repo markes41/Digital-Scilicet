@@ -180,3 +180,9 @@ padding: .5rem 1rem;
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
+.backgroundCursos{
+  background-image: url("../img/pattern.jpg")!important;
+  background-size: cover;
+  width: 100%;
+}
