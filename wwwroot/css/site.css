@@ -1,128 +1,141 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
-
-body{
-    background-color: #e6e7e8;
-    font-family: "Poppins", "sans-serif";
-    margin: 0;
+﻿body{
+  background-color: #e6e7e8;
+  font-family: "Poppins", "sans-serif";
+  margin: 0;
 }
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+white-space: normal;
+text-align: center;
+word-break: break-all;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+color: #0366d6;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+color: #fff;
+background-color: #1b6ec2;
+border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+color: #fff;
+background-color: #1b6ec2;
+border-color: #1861ac;
 }
 
-.btn{
-  padding: 1rem 4rem;
-  margin: 1rem auto;
+.btnSaberMas{
+padding: 1rem 4rem;
+margin: 1rem auto;
+font-size: 1rem;
 }
 
 .parrafoCursos{
-  background-image: url("../img/header.jpg");
-  padding: 16.5rem 0;
-  font-size: 1.8rem;
-  color: #e6e6e6;
-  background-size: cover;
-  -webkit-box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
-  -moz-box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
-  box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
+background-image: url("../img/header.jpg");
+padding: 16.5rem 0;
+font-size: 1.8rem;
+color: #e6e6e6;
+background-size: cover;
+-webkit-box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
+-moz-box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
+box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
 }
 
 .info{
-  text-align: center;
+text-align: center;
 }
 
 .cardCursos{
-  text-align: center;
-  color: #777777;
+text-align: center;
+color: #777777;
 }
 
 .goal{
-  font-size: 1.5rem;
+font-size: 1.5rem;
 }
 
 .mainTextGoal{
-  text-align: center;
-  color: #000000;
-  font-size: 2rem;
-  margin: 4rem;
+text-align: center;
+color: #000000;
+font-size: 2rem;
+margin: 4rem;
 } 
 
 .mainTextGoal{
-  text-align: center;
-  color: #000000;
-  font-size: 2rem;
-  margin: 4rem;
+text-align: center;
+color: #000000;
+font-size: 2rem;
+margin: 4rem;
 } 
 
 .modalidad{
-  background-image: url("../img/publicity1.jpg");
-  color: #e6e7e8;
-  align-items: center;
-  background-size: cover;
-  padding: 10rem 0;
-  display: flex;
-  -webkit-box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
-  -moz-box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
-  box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
+background-image: url("../img/publicity1.jpg");
+color: #e6e7e8;
+align-items: center;
+background-size: cover;
+padding: 10rem 0;
+display: flex;
+-webkit-box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
+-moz-box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
+box-shadow: -1px 13px 14px 0px rgba(0,0,0,0.37);
 }
 
 .linea{
-  border-left-width: 4px;
-  border-left-color: #B20B4F;
-  border-left-style: solid;
-  padding: 0px 256px 0px 24px;
-  text-align: left;
-  font-size: 1.2rem;
+border-left-width: 4px;
+border-left-color: #B20B4F;
+border-left-style: solid;
+padding: 0px 256px 0px 24px;
+text-align: left;
+font-size: 1.2rem;
 }
 
 .distancia{
-  text-align: right;
-  margin-right: 1rem;
-  font-size: 48px;
-  padding: 0px 24px 0px 256px;
+text-align: right;
+margin-right: 1rem;
+font-size: 48px;
+padding: 0px 24px 0px 256px;
 }
 
 .row{
-  margin-top: 1rem;
+margin-top: 1rem;
 }
 
 .cursosTxt{
-  font-size: 2rem;
-  text-align: center;
-  margin-top: 5rem; margin-bottom: 3rem;
-  color: #000000;
+font-size: 2rem;
+text-align: center;
+margin-top: 5rem; margin-bottom: 3rem;
+color: #000000;
 }
 
 .item{
-  text-align: center;
+text-align: center;
 }
 
 .btnCurso{
-  padding: .5rem 1rem;
+padding: .5rem 1rem;
 }
-/* Sticky footer styles
--------------------------------------------------- */
+
+.bg-red{
+  background-color: #B20B4F;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: #e5e5e5;
+}
+
+.navbar-light .navbar-brand{
+  color: #e5e5e5;
+}
+
+.centerDates{
+  margin: auto 0;
+}
+
+
+/*-------------------------------------------------- */
 html {
   font-size: 14px;
 }
@@ -166,4 +179,3 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
-
