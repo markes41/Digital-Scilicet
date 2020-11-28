@@ -479,3 +479,5 @@ C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\netcoreapp3.1\DigitalSc
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\netcoreapp3.1\DigitalScilicet.genruntimeconfig.cache
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Nosotros.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\netcoreapp3.1\Razor\Views\Home\FAQs.cshtml.g.cs
+C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contacto.cshtml.g.cs
+C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Cursos.cshtml.g.cs

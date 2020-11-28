@@ -17,12 +17,6 @@
         }
     });
 
-    $('.hide').hide();
-
-    $('.acordion').on('click', function(){
-        $(".hide").toggle(1000);
-    });
-
     $(".item-header").click(function(){
         $(".accordion-item").removeClass("active");
         $(this).parent().addClass("active");

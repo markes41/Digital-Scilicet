@@ -1,0 +1,42 @@
+@section Styles{
+     <link rel="stylesheet" href="~/css/contacto.css">
+}
+
+<div>
+    <p class="fondoContacto">CONTACTO</p>
+</div>
+
+<div class="container">
+    <p class="mediosContacto"><b>MEDIOS DE CONTACTO</b></p>
+
+<div class="contact-info">
+      <div class="card">
+        <i class="card-icon far fa-envelope"></i>
+        <p>digitalScilicet@gmail.com</p>
+      </div>
+
+      <div class="card">
+        <i class="card-icon fas fa-phone"></i>
+        <p>(+54) 1121452802</p>
+      </div>
+
+      <div class="card">
+        <i class="card-icon fas fa-map-marker-alt"></i>
+        <p class="direccionCard">Nicaragua 4677, Capital Federal</p>
+      </div>
+    </div>
+</div>
+
+<div class="contact-section">
+
+  <h1>ENVÍA TU CONSULTA</h1>
+  <div class="border"></div>
+  <form class="contact-form" action="@Url.Action("EnviarContacto", "Home")" method="POST">
+    <input type="text" class="contact-form-text" name="nombre" placeholder="Nombre/s...">
+    <input type="email" class="contact-form-text" name="correo" placeholder="Correo electrónico...">
+    <input type="text" class="contact-form-text" name="numTelefono" placeholder="Número de teléfono...">
+    <input type="text" class="contact-form-text" name="motivo" placeholder="Motivo...">
+    <textarea class="contact-form-text" name="mensaje" placeholder="Dejá tu mensaje..."></textarea>
+    <input type="submit" class="contact-form-btn" value="Send">
+  </form>
+</div>

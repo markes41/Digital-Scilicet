@@ -1,0 +1,145 @@
+.fondoContacto{
+    background-image: url("../img/Contacto.jpg");
+    background-position-y: 40%;
+    padding: 12rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+}
+
+.mediosContacto{
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 3rem;
+}
+
+.contact-info{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  }
+  
+  
+  .card{
+    background: #2f3542;
+    padding: 0 20px;
+    margin: 0 10px;
+    width: calc(33% - 20px);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .card-icon{
+    font-size: 28px;
+    background: #e66767;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px !important;
+    border-radius: 50%;
+    transition: 0.3s linear;
+  }
+  
+  .card:hover .card-icon{
+    background: none;
+    color: #e66767;
+    transform: scale(1.6);
+  }
+  
+  .card p{
+    margin-top: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    max-height: 0;
+    opacity: 0;
+    transition: 0.3s linear;
+  }
+  
+  .card:hover p{
+    max-height: 40px;
+    opacity: 1;
+  }
+
+  .contact-section h1{
+    text-align: center;
+    color: #000000;
+    margin-top: 4rem;
+  }
+  .border{
+    width: 100px;
+    height: 10px;
+    background: #B20B4F;
+    margin: 40px auto;
+  }
+  
+  .contact-form{
+    max-width: 600px;
+    margin: auto;
+    padding: 0 10px;
+    overflow: hidden;
+  }
+  
+  .contact-form-text{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    border-radius: 30px;
+    border: 2px solid rgb(104, 104, 104);
+    background: #ffffff;
+    padding: 15px 25px;
+    outline: none;
+    color: #000000;
+    transition: 0.5s;
+  }
+  .contact-form-text:focus{
+    box-shadow: 0 0 10px 4px #8b8b8b;
+  }
+  textarea.contact-form-text{
+    resize: none;
+    height: 120px;
+  }
+  .contact-form-btn{
+    float: right;
+    border: 0;
+    background: #b91a5a;
+    color: #fff;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 0 40%;
+    outline: none;
+  }
+  .contact-form-btn:hover{
+    background: #B20B4F;
+  }  
+  
+  @media screen and (max-width:800px) {
+    .contact-info{
+      flex-direction: column;
+    }
+    .card{
+      width: 100%;
+      max-width: 300px;
+      margin: 10px 0;
+    }
+  }
+  
+  .direccionCard{
+      text-align: center;
+  }
+
+  .contactoTitulo{
+    color: red;
+  }
