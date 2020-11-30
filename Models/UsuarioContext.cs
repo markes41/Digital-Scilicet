@@ -9,5 +9,6 @@ namespace User.Models
             : base(options)
             { }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Curso> Cursos { get; set; }
     }
 }

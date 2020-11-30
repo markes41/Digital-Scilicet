@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace User.Models
 {
@@ -17,6 +18,7 @@ namespace User.Models
         [Required]
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public List<Curso> Cursos { get; set; }
         
     }
 }

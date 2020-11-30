@@ -54,8 +54,8 @@ namespace DigitalScilicet.Controllers
             ViewBag.motivo = motivo;
             ViewBag.mail = correo;
             ViewBag.mensaje = mensaje;
-            string mailNuestro = "digitalscilicet@gmail.com";
-            string pass = "cZnQqWQx*";
+            string mailNuestro = "digitalscilicetest@gmail.com";
+            string pass = "41465817m";
 
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
             SmtpServer.Port = 587;
@@ -64,22 +64,33 @@ namespace DigitalScilicet.Controllers
             SmtpServer.EnableSsl = true;
 
             MailMessage mailMessage = new MailMessage(mailNuestro, correo);
-            mailMessage.Subject = motivo;
+            mailMessage.Subject = "Recibimos tu consulta sobre: "+motivo;
             mailMessage.Body = @"
+                
                 <html>
 
-                <style>
-                    .parrafo{
-                        color: red;
-                    }
-                </style>
+                    <style>
+                        .container{
+                            font-family: 'Poppins', 'sans-serif';
+                        }
+                    </style>
 
-                <h1 class='parrafo'>Cliente:"+nombre+@"</h1>
-
-                </html>"
-                
-                
-                ;
+                    <body>
+                        <div class='container' style='text-align: center;'>
+                            <img src='https://i.ibb.co/b6wLdLt/Head-Message.jpg' alt='' class='headmessage' style='display: block;margin: auto;'>
+                            <p class='nombre' style='font-size: 3rem;margin-bottom: 0;'><b>¡Hola "+nombre+@"!</b></p>
+                            <p class='mensajeConsulta' style='font-size: 1.5rem;color: #979797;'>Recibimos la consulta que realizaste en nuestra página</p>
+                            <p class='motivo' style='text-transform: uppercase;color: #3a4d97;font-size: 1.8rem;margin-top: 5rem;'><b>["+motivo+@"]</b></p>
+                            <p class='consulta' style='color: #979797;font-size: 1.3rem;margin: 0 20%;margin-bottom: 2rem;'>'"+mensaje+@"'</p>
+                            <hr style='width: 70%;'>
+                            <img src='https://i.ibb.co/QcFXFVF/RRSS.png' alt='' class='rrssImage' style='margin-top: 1.8rem;'>
+                            <p class='copyright' style='color: #979797;font-size: 1.1rem;'>©Digital Scilicet Inc. | Nicaragua 4677, Capital Federal | Plataforma de cursos <br>
+                            Si tenés alguna consulta por favor contáctanos en digitalscilicet@gmail.com </p>
+                            
+                        </div>
+                    </body>
+                </html>                
+                ";
             mailMessage.IsBodyHtml = true;
 
             SmtpServer.Send(mailMessage);
