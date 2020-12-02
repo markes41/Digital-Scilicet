@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using DigitalScilicet.Models;
-using System.Net.Mail;
+using PruebaIdentity.Data;
+using PruebaIdentity.Models;
 
-namespace DigitalScilicet.Controllers
+namespace PruebaIdentity.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            db = context;
         }
 
         public IActionResult Index()

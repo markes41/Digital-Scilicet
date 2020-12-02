@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace DigitalScilicet.Data.Migrations
+namespace PruebaIdentity.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

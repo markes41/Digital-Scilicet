@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace User.Models
+namespace PruebaIdentity.Models
 {
     public class Curso
     {
