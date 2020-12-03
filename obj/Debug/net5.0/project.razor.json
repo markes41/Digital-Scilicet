@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\PruebaIdentity.csproj",
+  "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\DigitalScilicet.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15600,7 +15600,7 @@
     ],
     "CSharpLanguageVersion": 900
   },
-  "RootNamespace": "PruebaIdentity",
+  "RootNamespace": "DigitalScilicet",
   "Documents": [
     {
       "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
@@ -15670,11 +15670,6 @@
     {
       "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\Register.cshtml",
-      "TargetPath": "Views\\Home\\Register.cshtml",
       "FileKind": "mvc"
     },
     {

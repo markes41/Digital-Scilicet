@@ -1,6 +1,6 @@
 using System;
 
-namespace PruebaIdentity.Models
+namespace DigitalScilicet.Models
 {
     public class ErrorViewModel
     {

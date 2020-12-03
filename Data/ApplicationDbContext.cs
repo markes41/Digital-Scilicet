@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DigitalScilicet.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using PruebaIdentity.Models;
 
-namespace PruebaIdentity.Data
+namespace DigitalScilicet.Models
 {
     public class ApplicationDbContext : IdentityDbContext<Usuario>
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
-namespace PruebaIdentity.Models
+namespace DigitalScilicet.Models
 {
     public class Usuario : IdentityUser
     {

@@ -21,27 +21,20 @@ using Microsoft.AspNetCore.Identity;
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\Mark\Documents\GitHub\DigitalScilicet\Areas\Identity\Pages\_ViewImports.cshtml"
-using PruebaIdentity.Areas.Identity;
+using DigitalScilicet.Areas.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Mark\Documents\GitHub\DigitalScilicet\Areas\Identity\Pages\_ViewImports.cshtml"
-using PruebaIdentity.Areas.Identity.Pages;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 5 "C:\Users\Mark\Documents\GitHub\DigitalScilicet\Areas\Identity\Pages\_ViewImports.cshtml"
-using PruebaIdentity.Models;
+using DigitalScilicet.Areas.Identity.Pages;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e8a704699820c151360d7ac5515024d23073660e", @"/Areas/Identity/Pages/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b10860af6060d4ee814b19ad321c6246d9e7140b", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6fe192bd566a3816341fcaa60d3fed72c215001d", @"/Areas/Identity/Pages/_ViewImports.cshtml")]
     public class Areas_Identity_Pages__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

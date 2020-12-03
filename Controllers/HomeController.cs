@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Net.Mail;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using PruebaIdentity.Data;
-using PruebaIdentity.Models;
+using DigitalScilicet.Models;
+using System.Net.Mail;
 
-namespace PruebaIdentity.Controllers
+namespace DigitalScilicet.Controllers
 {
     public class HomeController : Controller
     {
@@ -51,6 +49,26 @@ namespace PruebaIdentity.Controllers
         public IActionResult NuevoCurso()
         {
             return View();
+        }
+
+        public JsonResult DevolverCursos()
+        {
+            return Json(db.Cursos.ToList());
+        }
+
+        public JsonResult CrearCurso(string nombre, string descripcion, double precio)
+        {
+            Curso nuevoCurso = new Curso
+            {
+                Nombre = nombre,
+                Descripcion = descripcion,
+                Precio = precio
+            };
+
+            db.Cursos.Add(nuevoCurso);
+            db.SaveChanges();
+
+            return Json(nuevoCurso);
         }
 
         public IActionResult EnviarContacto(string nombre, string correo, string numTelefono, string motivo, string mensaje)
@@ -113,25 +131,7 @@ namespace PruebaIdentity.Controllers
         }
 
         
-        public JsonResult ConsultarCurso()
-        {
-            return Json(db.Cursos.ToList());
-        }
-
-        public JsonResult CrearCurso(string nombre, string descripcion, double precio)
-        {
-            Curso nuevoCurso = new Curso
-            {
-                Nombre = nombre,
-                Descripcion = descripcion,
-                Precio = precio
-            };
-
-            db.Cursos.Add(nuevoCurso);
-            db.SaveChanges();
-
-            return Json(nuevoCurso);
-        }
+        
 
 
 
