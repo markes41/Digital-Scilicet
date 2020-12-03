@@ -32,5 +32,18 @@
         $("#"+$(this).attr("alt")).addClass("active");
       });
 
+      $('#ConsultarCursos').on('click', function(){
+        $.ajax({
+            url: '/home/ConsultarCurso',
+            method: 'GET',
+            success: function(response){
+                console.log(response);
+            },
+            failure: function(error){
+                console.log(error);
+            }
+        });
+    })
+
 });
 

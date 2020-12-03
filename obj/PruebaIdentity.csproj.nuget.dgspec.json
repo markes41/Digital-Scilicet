@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mark\\Desktop\\test mvc\\PruebaIdentity.csproj": {}
+    "C:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\PruebaIdentity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mark\\Desktop\\test mvc\\PruebaIdentity.csproj": {
+    "C:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\PruebaIdentity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mark\\Desktop\\test mvc\\PruebaIdentity.csproj",
+        "projectUniqueName": "C:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\PruebaIdentity.csproj",
         "projectName": "PruebaIdentity",
-        "projectPath": "C:\\Users\\Mark\\Desktop\\test mvc\\PruebaIdentity.csproj",
+        "projectPath": "C:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\PruebaIdentity.csproj",
         "packagesPath": "C:\\Users\\Mark\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mark\\Desktop\\test mvc\\obj\\",
+        "outputPath": "C:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mark\\AppData\\Roaming\\NuGet\\NuGet.Config",

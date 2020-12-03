@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2RE3KfqqMbEy3qEtzQxSJNblZkWhx7dqNYM9ai2h8Z0LYiijCkqBEbwFpPJqxB9kuDf2HwPiVB3zxWl+bn1Y9w==",
+  "dgSpecHash": "BO346F3TX9e40MEjRyquPMHVfqePO2eFi7f0roLMfu1JseoX8z9gTf8Nm2Hc5ab18jpbGvKfsY2RzkB/YEP0Tw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mark\\Desktop\\test mvc\\PruebaIdentity.csproj",
+  "projectFilePath": "C:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\PruebaIdentity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mark\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Mark\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.0\\microsoft.aspnetcore.cryptography.internal.5.0.0.nupkg.sha512",

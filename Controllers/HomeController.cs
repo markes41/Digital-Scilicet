@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PruebaIdentity.Data;
@@ -44,8 +45,13 @@ namespace PruebaIdentity.Controllers
 
         public IActionResult Cursos()
         {
-            return View();
+            return View(db.Cursos.ToList());
         } 
+
+        public IActionResult NuevoCurso()
+        {
+            return View();
+        }
 
         public IActionResult EnviarContacto(string nombre, string correo, string numTelefono, string motivo, string mensaje)
         {
@@ -105,6 +111,30 @@ namespace PruebaIdentity.Controllers
             }
             return View("ok!");
         }
+
+        
+        public JsonResult ConsultarCurso()
+        {
+            return Json(db.Cursos.ToList());
+        }
+
+        public JsonResult CrearCurso(string nombre, string descripcion, double precio)
+        {
+            Curso nuevoCurso = new Curso
+            {
+                Nombre = nombre,
+                Descripcion = descripcion,
+                Precio = precio
+            };
+
+            db.Cursos.Add(nuevoCurso);
+            db.SaveChanges();
+
+            return Json(nuevoCurso);
+        }
+
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
