@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:61197",
-      "sslPort": 44386
+      "applicationUrl": "http://localhost:52666",
+      "sslPort": 44323
     }
   },
   "profiles": {
@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "DigitalScilicet": {
+    "Digital_Scilicet": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

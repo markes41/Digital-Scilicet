@@ -1,6 +1,6 @@
 using System;
 
-namespace DigitalScilicet.Models
+namespace Digital_Scilicet.Models
 {
     public class ErrorViewModel
     {

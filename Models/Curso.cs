@@ -1,7 +1,8 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DigitalScilicet.Models
+namespace Cursos.Models
 {
     public class Curso
     {
@@ -9,11 +10,13 @@ namespace DigitalScilicet.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long ID { get; set; }
         [Required]
-        public string Nombre { get; set; }
+        public string Titulo { get; set; }
         [Required]
         public string Descripcion { get; set; }
         [Required]
         public double Precio { get; set; }
-        public Usuario Owner { get; set; }
+        [Required]
+        public int Categoria { get; set; }
+        public List<Usuario> Owner { get; set; }
     }
 }

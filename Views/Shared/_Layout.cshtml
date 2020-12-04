@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - DigitalScilicet</title>
+    <title>@ViewData["Title"] - Digital_Scilicet</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <script src="https://kit.fontawesome.com/46e18bb4ff.js" crossorigin="anonymous"></script>
@@ -37,15 +37,31 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contacto">Contacto</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Register">Register</a>
+                        </li> 
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Deslogear">Log Out</a>
+                        </li>
+                        
+
+                        
                     </ul>
-                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
     </header>
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    
 
     <div class="fondo">
         <p><br>SEGUINOS</p>
@@ -57,10 +73,6 @@
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </div>
-
-
-
-
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

@@ -5,17 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using DigitalScilicet.Models;
+using Digital_Scilicet.Models;
+using Cursos.Models;
 using System.Net.Mail;
 
-namespace DigitalScilicet.Controllers
+namespace Digital_Scilicet.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ApplicationDbContext db;
+        private readonly CursosContext db;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public HomeController(ILogger<HomeController> logger, CursosContext context)
         {
             _logger = logger;
             db = context;
@@ -43,32 +44,113 @@ namespace DigitalScilicet.Controllers
 
         public IActionResult Cursos()
         {
-            return View(db.Cursos.ToList());
+            return View();
         } 
 
         public IActionResult NuevoCurso()
         {
             return View();
         }
+        
+        public IActionResult Register()
+        {
+            return View();
+        }
 
-        public JsonResult DevolverCursos()
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public JsonResult ConsultarCurso()
         {
             return Json(db.Cursos.ToList());
         }
 
-        public JsonResult CrearCurso(string nombre, string descripcion, double precio)
+        public JsonResult CrearCurso(string nombre, string descripcion, double precio, int categoria)
         {
-            Curso nuevoCurso = new Curso
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+
+            if(usuario != null)
             {
+
+                Curso nuevoCurso = new Curso
+                {
+                    Titulo = nombre,
+                    Descripcion = descripcion,
+                    Precio = precio,
+                    Categoria = categoria
+                };
+
+                db.Cursos.Add(nuevoCurso);
+                db.SaveChanges();
+
+                return Json("ok!");
+
+            }
+            else
+            {
+                return Json("No estás logeado");
+            }
+
+        }
+
+        public JsonResult RegistrarUsuario(string mail, string nombre, string username, string password)
+        {
+            Usuario usuarioCheck = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail));
+
+            if(usuarioCheck == null){
+                Usuario nuevoUsuario = new Usuario{
+                Mail = mail,
                 Nombre = nombre,
-                Descripcion = descripcion,
-                Precio = precio
+                Username = username,
+                Password = password
             };
 
-            db.Cursos.Add(nuevoCurso);
+            db.Usuarios.Add(nuevoUsuario);
             db.SaveChanges();
+            return Json("Se creó el usuario con éxito");
 
-            return Json(nuevoCurso);
+            }else{
+                return Json("Ya existe un usuario con ese mail");
+            }   
+        }
+
+        public IActionResult LogearUsuario(string mail, string password)
+        {
+            Usuario usuarioCheckMail = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail));
+
+            if(usuarioCheckMail != null)
+            {
+                if(usuarioCheckMail.Password.Equals(password))
+                {
+                    HttpContext.Session.Set<Usuario>("UsuarioLogueado", usuarioCheckMail);
+                    var Username = usuarioCheckMail.Username;
+                    ViewBag.username = Username;
+                    ViewBag.UsuarioConectado = true;
+                    return View("Index");
+                }
+                else
+                {
+                    return View("Login");
+                }
+            }
+            else
+            {
+                return Json("<h1>LOGEADO</h1>");
+            }
+        }
+
+        public JsonResult ConsultarUsuario()
+        {
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            return Json(usuario);
+        }
+
+        public IActionResult Deslogear()
+        {
+            HttpContext.Session.Remove("UsuarioLogueado");
+            return View("Index");
         }
 
         public IActionResult EnviarContacto(string nombre, string correo, string numTelefono, string motivo, string mensaje)
@@ -129,10 +211,6 @@ namespace DigitalScilicet.Controllers
             }
             return View("ok!");
         }
-
-        
-        
-
 
 
 

@@ -5,6 +5,7 @@
 <form class="contact-form" action="@Url.Action("CrearCurso", "Home")" method="POST">
     <input type="text" class="contact-form-text" name="nombre" placeholder="Nombre del curso">
     <input type="text" class="contact-form-text" name="precio" placeholder="Precio del curso">
-    <textarea class="contact-form-text" name="descripcion" placeholder="Descripción del curso"></textarea>
+    <input type="text" class="contact-form-text" name="categoria" placeholder="Categoria del curso">
+    <textarea class="contact-form-text" maxlength="100" name="descripcion" placeholder="Descripción del curso"></textarea>
     <input type="submit" class="contact-form-btn" value="Crear">
   </form>
