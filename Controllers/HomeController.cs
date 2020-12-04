@@ -44,7 +44,7 @@ namespace Digital_Scilicet.Controllers
 
         public IActionResult Cursos()
         {
-            return View();
+            return View(db.Cursos.ToList());
         } 
 
         public IActionResult NuevoCurso()
@@ -85,7 +85,7 @@ namespace Digital_Scilicet.Controllers
                 db.Cursos.Add(nuevoCurso);
                 db.SaveChanges();
 
-                return Json("ok!");
+                return Json("ok");
 
             }
             else
@@ -125,8 +125,7 @@ namespace Digital_Scilicet.Controllers
                 if(usuarioCheckMail.Password.Equals(password))
                 {
                     HttpContext.Session.Set<Usuario>("UsuarioLogueado", usuarioCheckMail);
-                    var Username = usuarioCheckMail.Username;
-                    ViewBag.username = Username;
+                    ViewBag.username = usuarioCheckMail.Username;
                     ViewBag.UsuarioConectado = true;
                     return View("Index");
                 }
@@ -137,7 +136,7 @@ namespace Digital_Scilicet.Controllers
             }
             else
             {
-                return Json("<h1>LOGEADO</h1>");
+                return Json("Usuario no encontrado.");
             }
         }
 

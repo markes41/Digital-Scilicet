@@ -81,7 +81,13 @@
         $("#"+$(this).attr("alt")).addClass("active");
       });
 
-      
+      $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        variableWidth: true,
+        adaptiveHeight: true
+      });
 
 });
 

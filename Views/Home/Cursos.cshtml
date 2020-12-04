@@ -1,20 +1,51 @@
-
+@using Cursos.Models
+@model List<Curso>
 @section Styles{
-    <link rel="stylesheet" href="~/css/cursos.css">
-    <link rel="stylesheet" href="~/css/lightslider.css">
+    <link rel="stylesheet" type="text/css" href="~/css/cursos.css"/>
+    <link rel="stylesheet" type="text/css" href="~/css/lightslider.css"/>
 }
 
-    
-    
-        
-    
             <div id="notas">
                 <div class="seccion-titulo">Base de Datos</div>
-                <div class="container">
-                    <div class="row">
-                        <div id="database"></div>
-                    </div>
-                </div>
+                
+                <section class="center slider">
+                    @foreach (Curso cursos in Model)
+                    {
+                        if(@cursos.Categoria == 1)
+                        {
+                            <div>@cursos.Titulo</div>
+                        }
+                    }
+                </section>
+
+                
+                    @foreach (Curso cursos in Model)
+                    {
+                        if(@cursos.Categoria == 2)
+                        {
+                            <div class="card" style="width: 20rem;">
+                                <img src="~/img/img1.jpg" class="card-img-top" alt="...">
+                                <div class="contenido">
+                                    <p class="cardTitulo">@cursos.Titulo</p>
+                                    <p class="cardDescripcion">@cursos.Descripcion</p>
+                                    <div class="row">
+                                        <p class="cardPrecio col-md-6">$@cursos.Precio</p>
+                                        <div class="cardEstrellas col-md-6">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="" class="cardComprar">COMPRAR</a>
+                            </div>   
+                        }
+                    }
+                
+                
+                
                 <div id="web"> </div>
                 <div id="videogames"></div>
                 <div id="mobile"></div>
@@ -22,9 +53,33 @@
     <a href="#" id="ConsultarCursos">CONSULTAR CURSOS</a>
 
     
-
+            <ul id="autoWidth" class="cs-hidden">
+                <li class="item-a">
+                    <!--slider-box-->
+                        <div class="box">
+                            <div class="card" style="width: 20rem;">
+                                <img src="~/img/img1.jpg" class="card-img-top" alt="...">
+                                <div class="contenido">
+                                    <p class="cardTitulo">Programación Web FullStack Desde 0 a Experto</p>
+                                    <p class="cardDescripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, perspiciatis? Pariatur vero ipsum</p>
+                                    <div class="row">
+                                        <p class="cardPrecio col-md-6">$20.99</p>
+                                        <div class="cardEstrellas col-md-6">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="" class="cardComprar">COMPRAR</a>
+                            </div>
+                        </div>
+                </li>
+            </ul>
     
-            <!--<div class="card" style="width: 20rem;">
+            <div class="card" style="width: 20rem;">
                 <img src="~/img/img1.jpg" class="card-img-top" alt="...">
                 <div class="contenido">
                     <p class="cardTitulo">Programación Web FullStack Desde 0 a Experto</p>
@@ -41,10 +96,11 @@
                     </div>
                 </div>
                 <a href="" class="cardComprar">COMPRAR</a>
-            </div>-->        
+            </div>        
 	
 	
 @section Scripts{
-    <script src="~/js/lightslider.js"></script>
+    <script type="text/javascript" src="~/slick/slick.min.js"></script>
+    <script src="js/lightslider.js"></script>
     <script src="~/js/script.js"></script>
 }
