@@ -1,77 +1,88 @@
-.card{
-	background: #fff;
-	border-width: 0 1px 1px;
-	border-style: solid;
-	border-color: #ebebeb;
-}
-
-.contenido{
-	padding: 15px;
-}
-
-.cardTitulo{
-	color: #03a9f4;
-}
-
-.cardDescripcion{
-	color: #999;
-}
-
-.cardPrecio{
-	font-size: 2rem;
-	margin-bottom: 0;
-}
-
-.cardEstrellas{
-	color: #f5c22a;
-	margin: auto 0;
-}
-
-.cardComprar{
-	background-color: #03a9f4;
-	width: 50%;
-	margin: 0 35%;
-	padding: .5rem;
-	margin-bottom: 1rem;
-	border-radius: 25px;
-	color: white;
-	text-align: center;
-}
-
-.card a{
-	text-decoration: none;
-}
-
-.card a:hover{
-	color: #e4e3e3;
-}
-
-.cardComprar:hover{
-	background-color: #0194d8;
-}
-
 .seccion-titulo{
-	text-align: center;
+	margin-left: 10%;
 	font-weight: 500;
-	font-size: 2rem;
+	font-size: 1.5rem;
+	margin-top: 2rem;
+	
 }
 
-.seccion-titulo::after{
-	position: absolute;
-	content: '';
-	height: 3px;
-	width: 70px;
-	margin-left: 20px;
-	background-color: #03a9f4;
-	top: 10.4%;
+
+
+.card-body{
+    padding: 15px;
 }
 
-.seccion-titulo::before{
-	position: absolute;
-	content: '';
-	height: 3px;
-	width: 70px;
-	margin-left: -90px;
-	background-color: #03a9f4;
-	top: 10.4%;
+.card{
+    box-shadow: rgba(31, 31, 31, 0.12) 0px 1px 6px, rgba(31, 31, 31, 0.12) 0px 1px 4px;
+}
+
+.card-header{
+    text-align: center;
+    background-color: #2a73cc;
+    padding: 3px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.card-content{
+    padding: 5px;
+}
+
+.btn{
+    width: 100%;
+}
+
+.card-text{
+    color: rgb(117, 117, 117);
+}
+
+.footer{
+    font-size: .85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+	position:absolute;
+    bottom:5px;
+    left:10px;
+	
+}
+
+.regular a{
+    text-decoration: none;
+    outline: none;
+}
+
+.slider {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+
+.slick-active {
+  opacity: .5;
+}
+
+.slick-current {
+  opacity: 1;
+}
+
+.slick-prev:before, .slick-next:before{
+	color: #818181;
 }

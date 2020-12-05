@@ -1,106 +1,112 @@
 @using Cursos.Models
 @model List<Curso>
 @section Styles{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="~/css/cursos.css"/>
-    <link rel="stylesheet" type="text/css" href="~/css/lightslider.css"/>
 }
-
-            <div id="notas">
-                <div class="seccion-titulo">Base de Datos</div>
-                
-                <section class="center slider">
-                    @foreach (Curso cursos in Model)
-                    {
-                        if(@cursos.Categoria == 1)
-                        {
-                            <div>@cursos.Titulo</div>
-                        }
-                    }
-                </section>
-
-                
-                    @foreach (Curso cursos in Model)
-                    {
-                        if(@cursos.Categoria == 2)
-                        {
-                            <div class="card" style="width: 20rem;">
-                                <img src="~/img/img1.jpg" class="card-img-top" alt="...">
-                                <div class="contenido">
-                                    <p class="cardTitulo">@cursos.Titulo</p>
-                                    <p class="cardDescripcion">@cursos.Descripcion</p>
-                                    <div class="row">
-                                        <p class="cardPrecio col-md-6">$@cursos.Precio</p>
-                                        <div class="cardEstrellas col-md-6">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="" class="cardComprar">COMPRAR</a>
-                            </div>   
-                        }
-                    }
-                
-                
-                
-                <div id="web"> </div>
-                <div id="videogames"></div>
-                <div id="mobile"></div>
-            </div>
-    <a href="#" id="ConsultarCursos">CONSULTAR CURSOS</a>
-
     
-            <ul id="autoWidth" class="cs-hidden">
-                <li class="item-a">
-                    <!--slider-box-->
-                        <div class="box">
-                            <div class="card" style="width: 20rem;">
-                                <img src="~/img/img1.jpg" class="card-img-top" alt="...">
-                                <div class="contenido">
-                                    <p class="cardTitulo">Programación Web FullStack Desde 0 a Experto</p>
-                                    <p class="cardDescripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, perspiciatis? Pariatur vero ipsum</p>
-                                    <div class="row">
-                                        <p class="cardPrecio col-md-6">$20.99</p>
-                                        <div class="cardEstrellas col-md-6">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                    </div>
+        <p class="seccion-titulo">Base de Datos</p>
+            <section class="regular slider">
+                @foreach (Curso cursos in Model)
+                {
+                    if(@cursos.Categoria == 1)
+                    {
+                        <a data-toggle="modal" data-target="#exampleModal">
+                            <div class="card" style="width: 18rem; height: 20rem;">
+                                <img src="~/img/imgDatos.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">@cursos.Titulo</h5>
+                                    <p class="footer card-text">Curso</p>
                                 </div>
-                                <a href="" class="cardComprar">COMPRAR</a>
                             </div>
-                        </div>
-                </li>
-            </ul>
-    
-            <div class="card" style="width: 20rem;">
-                <img src="~/img/img1.jpg" class="card-img-top" alt="...">
-                <div class="contenido">
-                    <p class="cardTitulo">Programación Web FullStack Desde 0 a Experto</p>
-                    <p class="cardDescripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, perspiciatis? Pariatur vero ipsum</p>
-                    <div class="row">
-                        <p class="cardPrecio col-md-6">$20.99</p>
-                        <div class="cardEstrellas col-md-6">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <a href="" class="cardComprar">COMPRAR</a>
-            </div>        
+                        </a>
+                    }
+                }
+            </section> 
+
+            <p class="seccion-titulo">Desarrollo de Aplicaciones Web</p>
+            <section class="regular slider">
+                @foreach (Curso cursos in Model)
+                {
+                    if(@cursos.Categoria == 2)
+                    {
+                        <a href="">
+                            <div class="card" style="width: 18rem; height: 20rem;">
+                                <img src="~/img/imgWeb.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">@cursos.Titulo</h5>
+                                    <p class="footer card-text">Curso</p>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+            </section> 
+
+            <p class="seccion-titulo">Desarrollo de Videojuegos</p>
+            <section class="regular slider">
+                @foreach (Curso cursos in Model)
+                {
+                    if(@cursos.Categoria == 3)
+                    {
+                        <a href="">
+                            <div class="card" style="width: 18rem; height: 20rem;">
+                                <img src="~/img/imgVideojuegos.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">@cursos.Titulo</h5>
+                                    <p class="footer card-text">Curso</p>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+            </section> 
+
+            <p class="seccion-titulo">Desarrollo Mobile</p>
+            <section class="regular slider">
+                @foreach (Curso cursos in Model)
+                {
+                    if(@cursos.Categoria == 4)
+                    {
+                        <a href="">
+                            <div class="card" style="width: 18rem; height: 20rem;">
+                                <img src="~/img/imgMobile.png" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">@cursos.Titulo</h5>
+                                <p class="footer card-text">Curso</p>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+            </section>    
+
+            <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 	
 	
 @section Scripts{
-    <script type="text/javascript" src="~/slick/slick.min.js"></script>
-    <script src="js/lightslider.js"></script>
-    <script src="~/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js" integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ==" crossorigin="anonymous"></script>
 }
