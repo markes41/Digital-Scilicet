@@ -104,7 +104,20 @@ namespace Digital_Scilicet.Controllers
         public IActionResult ComprarCurso(int ID)
         {
             Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
-            return View(curso);
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+
+            if(curso != null && usuario != null)
+            {
+                curso.Owner.Add(usuario);
+                db.Cursos.Update(curso);
+                db.SaveChanges();
+                return View("Index");
+            }
+            else
+            {
+                return View("Login");
+            }
+            
         }
 
         public JsonResult RegistrarUsuario(string mail, string nombre, string username, string password)
