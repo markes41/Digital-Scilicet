@@ -1,0 +1,113 @@
+.header-main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.header-info{
+    margin-bottom: 3rem;
+}
+
+.fa-user{
+    font-size: 1.3rem;
+    padding-left: 15px;
+}
+
+
+.autor p:first-child{
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.autor p{
+    font-size: 1.4rem;
+}
+
+.autor p:first-child{
+    color: #6e767f;
+}
+
+.calificaciones-content{
+    display: flex;
+    margin-top: -27px;
+    vertical-align: center;
+}
+
+.puntaje-media{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 12px;
+    margin-right: 25px;
+    color: rgb(247, 187, 86);
+}
+
+.cantidad-calificaciones{
+    margin-top: 2px;
+    color: #6e767f;
+}
+
+.estrellas-curso{
+    color: rgb(247, 187, 86);
+}
+
+.circulo img{
+    width: 22px;
+    height: 22px;
+}
+
+.circulo{
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid rgb(190, 190, 190);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    vertical-align: center;
+
+}
+
+.certificado-header{
+    display: flex;
+
+}
+
+.certificado-texto{
+    margin-left: 12px;
+}
+
+.certificado-primario{
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+.certificado-secundario{
+    color: #6e767f;
+}
+
+.acerca-de p{
+    color: #6e767f;
+}
+
+.order-btn{
+    display: inline-block;
+
+    background-color: #0fbcf9;
+    color: white;
+    padding: 11px 40px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: .3s linear;
+  }
+  
+  .order-btn:hover{
+    color: #fff;
+  }
+
+  .fa-shopping-cart{
+      margin-right: 7px;
+  }

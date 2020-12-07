@@ -1,0 +1,93 @@
+@using Cursos.Models
+@model Curso
+@section Styles{
+    <link rel="stylesheet" href="~/css/infoCurso.css">
+}
+
+<div class="container">
+            <div class="header-info">
+                    <div class="header-main">
+                        <h2>@Model.Titulo</h2>
+                        <div class="autor">
+                            <p>Ofrecido por</p>
+                            <p class="autor-name">Marcos Emmanuel Sequeira</p>
+                        </div>
+                    </div>
+                    <div class="calificaciones-content">
+                        <div class="estrellas-curso">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="puntaje-media">4.6</p>
+                        <p class="cantidad-calificaciones">1227 calificaciones</p>
+                    </div>
+                </div>
+                
+                <hr>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="acerca-de">
+                <h2>Acerca de este curso</h2>
+                <p>Vivimos rodeados de proyectos. Prácticamente todas las organizaciones dirigen proyectos, ya sea de manera formal o informal.Los tenemos en casa y en el trabajo. A través de determinados parámetros, principios de planificación y metodologías de ejecución, los proyectos se pueden gestionar de forma eficiente y efectiva. La gestión de proyectos ofrece a las organizaciones (y las personas) el lenguaje y los marcos para organizar proyectos, programar actividades, utilizar recursos y minimizar riesgos. <br> <br>
+                Este es un curso de introducción a los conceptos básicos de la planificación y ejecución de proyectos. Identificaremos los factores que llevan al éxito en este ámbito y aprenderemos a planificar, analizar y gestionar proyectos. Los alumnos repasarán metodologías de vanguardia y evaluarán los desafíos de varios tipos de proyectos. <br> <br>
+                Como Proveedor de Educación Registrado del Project Management Institute (PMI®), la Darden School of Business de la Universidad de Virginia recibió la aprobación de dicho instituto para publicar 12 unidades de desarrollo profesional (UDP) para el curso, que se centra en las principales competencias que reconoce el PMI. (Proveedor n.º 2122)</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="certificado">
+                <div class="certificado-header">
+                    <div class="circulo">
+                        <img src="~/img/certificate-icon.png" alt="">
+                    </div>
+                    <div class="certificado-texto">
+                        <p class="certificado-primario">Certificado para compartir</p>
+                        <p class="certificado-secundario">Obtené un certificado la finalizar.</p>
+                    </div>
+                </div>
+            </div>
+
+                <div class="certificado">
+                    <div class="certificado-header">
+                        <div class="circulo">
+                            <img src="~/img/online-icon.png" alt="">
+                        </div>
+                        <div class="certificado-texto">
+                            <p class="certificado-primario">100% en línea</p>
+                            <p class="certificado-secundario">Aprendé desde cualquier tipo de dispositivo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certificado">
+                    <div class="certificado-header">
+                        <div class="circulo">
+                            <img src="~/img/calendar-icon.png" alt="">
+                        </div>
+                        <div class="certificado-texto">
+                            <p class="certificado-primario">Sin límites de tiempo</p>
+                            <p class="certificado-secundario">Comenzá y terminá el curso cuando vos quieras.</p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="certificado">
+                <div class="certificado-header">
+                    <div class="circulo">
+                        <img src="~/img/lenguage-icon.png" alt="">
+                    </div>
+                    <div class="certificado-texto">
+                        <p class="certificado-primario">Lenguaje</p>
+                        <p class="certificado-secundario">Todos nuestros cursos están en español.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<hr>

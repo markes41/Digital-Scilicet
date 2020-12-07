@@ -12,15 +12,19 @@
                 {
                     if(@cursos.Categoria == 1)
                     {
-                        <a data-toggle="modal" data-target="#exampleModal">
-                            <div class="card" style="width: 18rem; height: 20rem;">
+                        
+                            <div class="card" style="width: 19rem; height: 25rem;">
                                 <img src="~/img/imgDatos.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">@cursos.Titulo</h5>
-                                    <p class="footer card-text">Curso</p>
+                                    <h5 class="card-title">@cursos.Titulo</h5>
+                                    <p class="footer-precio card-text">$@cursos.Precio</p>
+                                    <div class="btn-footer">
+                                        <a href="#" class="carrito-btn col-md-6" id="agregar-carrito"><i class="fas fa-shopping-cart"></i>AGREGAR</a>
+                                        <a href="/home/CursoInformacion/@cursos.ID" class="info-btn col-md-6" target="_blank">SABER MÁS</a>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
+                        
                     }
                 }
             </section> 
@@ -31,15 +35,19 @@
                 {
                     if(@cursos.Categoria == 2)
                     {
-                        <a href="">
-                            <div class="card" style="width: 18rem; height: 20rem;">
+                        
+                            <div class="card" style="width: 18rem; height: 25rem;">
                                 <img src="~/img/imgWeb.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">@cursos.Titulo</h5>
-                                    <p class="footer card-text">Curso</p>
+                                    <h5 class="card-title">@cursos.Titulo</h5>
+                                    <p class="footer-precio card-text">$@cursos.Precio</p>
+                                    <div class="btn-footer">
+                                    <a href="" class="carrito-btn col-md-6" id="agregar-carrito"><i class="fas fa-shopping-cart"></i>AGREGAR</a>
+                                    <a href="/home/CursoInformacion/@cursos.ID" class="info-btn col-md-6" target="_blank">SABER MÁS</a>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
+                        
                     }
                 }
             </section> 
@@ -50,15 +58,19 @@
                 {
                     if(@cursos.Categoria == 3)
                     {
-                        <a href="">
-                            <div class="card" style="width: 18rem; height: 20rem;">
+                        
+                            <div class="card" style="width: 18rem; height: 25rem;">
                                 <img src="~/img/imgVideojuegos.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">@cursos.Titulo</h5>
-                                    <p class="footer card-text">Curso</p>
+                                    <h5 class="card-title">@cursos.Titulo</h5>
+                                    <p class="footer-precio card-text">$@cursos.Precio</p>
+                                    <div class="btn-footer">
+                                    <a href="#" class="carrito-btn col-md-6" id="agregar-carrito"><i class="fas fa-shopping-cart"></i>AGREGAR</a>
+                                    <a href="/home/CursoInformacion/@cursos.ID" class="info-btn col-md-6" target="_blank">SABER MÁS</a>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
+                        
                     }
                 }
             </section> 
@@ -69,28 +81,28 @@
                 {
                     if(@cursos.Categoria == 4)
                     {
-                        <a href="">
-                            <div class="card" style="width: 18rem; height: 20rem;">
+                        
+                            <div class="card" style="width: 18rem; height: 25rem;">
                                 <img src="~/img/imgMobile.png" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                <h5 class="card-title">@cursos.Titulo</h5>
-                                <p class="footer card-text">Curso</p>
+                                    <h5 class="card-title">@cursos.Titulo</h5>
+                                    <p class="footer-precio card-text">$@cursos.Precio</p>
+                                    <div class="btn-footer">
+                                    <a href="#" class="carrito-btn col-md-6" id="agregar-carrito"><i class="fas fa-shopping-cart"></i>AGREGAR</a>
+                                    <a href="/home/CursoInformacion/@cursos.ID" class="info-btn col-md-6" target="_blank">SABER MÁS</a>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
+                        
                     }
                 }
             </section>    
 
-            <!-- Button trigger modal -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

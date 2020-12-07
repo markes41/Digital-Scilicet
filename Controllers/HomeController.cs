@@ -95,6 +95,18 @@ namespace Digital_Scilicet.Controllers
 
         }
 
+        public IActionResult CursoInformacion(int ID)
+        {
+            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
+            return View(curso);
+        }
+
+        public IActionResult ComprarCurso(int ID)
+        {
+            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
+            return View(curso);
+        }
+
         public JsonResult RegistrarUsuario(string mail, string nombre, string username, string password)
         {
             Usuario usuarioCheck = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail));
