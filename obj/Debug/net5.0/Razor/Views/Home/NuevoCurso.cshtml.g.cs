@@ -26,8 +26,15 @@ using Digital_Scilicet.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Mark\Documents\GitHub\DigitalScilicet\Views\_ViewImports.cshtml"
+using Cursos.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c8948f000ab15438d56c5f98517fa8ca96e4ee74", @"/Views/Home/NuevoCurso.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"695c07fb979c9d2803a7060d851a521712fff5a7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f8ee519cc10ae37ce34c40201c603ab95049223e", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_NuevoCurso : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("rel", new global::Microsoft.AspNetCore.Html.HtmlString("stylesheet"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -62,7 +69,7 @@ using Digital_Scilicet.Models;
         {
             DefineSection("Styles", async() => {
                 WriteLiteral("\r\n     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c8948f000ab15438d56c5f98517fa8ca96e4ee744800", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "c8948f000ab15438d56c5f98517fa8ca96e4ee744975", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -80,7 +87,7 @@ using Digital_Scilicet.Models;
             }
             );
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c8948f000ab15438d56c5f98517fa8ca96e4ee746037", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c8948f000ab15438d56c5f98517fa8ca96e4ee746212", async() => {
                 WriteLiteral(@"
     <input type=""text"" class=""contact-form-text"" name=""nombre"" placeholder=""Nombre del curso"">
     <input type=""text"" class=""contact-form-text"" name=""precio"" placeholder=""Precio del curso"">

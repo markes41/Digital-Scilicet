@@ -15603,6 +15603,11 @@
   "RootNamespace": "Digital_Scilicet",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\MisCursos.cshtml",
+      "TargetPath": "Views\\Home\\MisCursos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\Cursos.cshtml",
       "TargetPath": "Views\\Home\\Cursos.cshtml",
       "FileKind": "mvc"

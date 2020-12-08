@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Digital_Scilicet.Models;
 using Cursos.Models;
 using System.Net.Mail;
+using Microsoft.EntityFrameworkCore;
 
 namespace Digital_Scilicet.Controllers
 {
@@ -62,9 +63,10 @@ namespace Digital_Scilicet.Controllers
             return View();
         }
 
-        public JsonResult ConsultarCurso()
+        public JsonResult ConsultarCurso(long ID)
         {
-            return Json(db.Cursos.ToList());
+            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
+            return Json(curso);
         }
 
         public JsonResult CrearCurso(string nombre, string descripcion, double precio, int categoria)
@@ -103,15 +105,37 @@ namespace Digital_Scilicet.Controllers
 
         public IActionResult ComprarCurso(int ID)
         {
-            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
+            Curso curso = db.Cursos.Include(c => c.Owner).FirstOrDefault(c => c.ID == ID);
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            Usuario user = db.Usuarios.Include(u => u.Cursos).FirstOrDefault(u => u.Mail.Equals(usuario.Mail));
 
             if(curso != null && usuario != null)
+
             {
+                user.Cursos.Add(curso);
+                db.Usuarios.Update(user);
                 curso.Owner.Add(usuario);
                 db.Cursos.Update(curso);
                 db.SaveChanges();
                 return View("Index");
+            }
+            else
+            {
+                return View("Login");
+            }
+            
+        }
+
+        public IActionResult MisCursos()
+        {   
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            
+
+            if(usuario != null)
+            {
+                Usuario user = db.Usuarios.Include(u => u.Cursos).FirstOrDefault(u => u.Mail.Equals(usuario.Mail));
+                var lista = user.Cursos.ToList();
+                return View(user.Cursos.ToList());
             }
             else
             {
@@ -144,8 +168,9 @@ namespace Digital_Scilicet.Controllers
         public IActionResult LogearUsuario(string mail, string password)
         {
             Usuario usuarioCheckMail = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail));
+            Usuario checkUserLogged = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
 
-            if(usuarioCheckMail != null)
+            if(usuarioCheckMail != null && checkUserLogged == null)
             {
                 if(usuarioCheckMail.Password.Equals(password))
                 {
@@ -161,7 +186,7 @@ namespace Digital_Scilicet.Controllers
             }
             else
             {
-                return Json("Usuario no encontrado.");
+                return View("Login");
             }
         }
 

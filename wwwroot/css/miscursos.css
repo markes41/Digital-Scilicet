@@ -1,0 +1,34 @@
+.card-body{
+  box-shadow: 0 0 20p 7px rgba(0, 0, 0, 0.1);
+}
+
+.card{
+  margin: 20px 10px;
+  height: 20rem;
+}
+
+.card-title{
+  margin-bottom: 2rem;
+}
+
+.card-body a{
+  color: #0fbcf9;
+  text-decoration: none;
+  font-size: 15px;
+  margin-top: auto;
+  font-weight: 600;
+  padding: 15px;
+  transition: .3s linear;
+  margin-top: 2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.card-body a:hover{
+  text-decoration: none;
+  background-color: #0fbcf9;
+  color: white;
+  font-weight: 600;
+}
