@@ -15668,6 +15668,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\testCurso.cshtml",
+      "TargetPath": "Views\\Home\\testCurso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\VerCurso.cshtml",
+      "TargetPath": "Views\\Home\\VerCurso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"

@@ -2,14 +2,16 @@
 using Cursos.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Digital_Scilicet.Migrations
 {
     [DbContext(typeof(CursosContext))]
-    partial class CursosContextModelSnapshot : ModelSnapshot
+    [Migration("20201209040204_v2.4")]
+    partial class v24
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,9 +50,6 @@ namespace Digital_Scilicet.Migrations
 
                     b.Property<string>("Titulo")
                         .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Url")
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");

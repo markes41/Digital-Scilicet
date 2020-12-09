@@ -348,3 +348,5 @@ C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Digital-Scilicet
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Digital-Scilicet.genruntimeconfig.cache
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\CursoInformacion.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\MisCursos.cshtml.g.cs
+C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\testCurso.cshtml.g.cs
+C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\VerCurso.cshtml.g.cs

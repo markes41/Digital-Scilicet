@@ -69,21 +69,27 @@ namespace Digital_Scilicet.Controllers
             return Json(curso);
         }
 
-        public JsonResult CrearCurso(string nombre, string descripcion, double precio, int categoria)
+        public IActionResult testCurso()
+        {
+            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == 22);
+            return View(curso);
+        }
+
+        public JsonResult CrearCurso(string nombre, string descripcion, double precio, int categoria, string url)
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
 
             if(usuario != null)
             {
-
+                
                 Curso nuevoCurso = new Curso
                 {
                     Titulo = nombre,
                     Descripcion = descripcion,
                     Precio = precio,
-                    Categoria = categoria
+                    Categoria = categoria,
+                    Url = url
                 };
-
                 db.Cursos.Add(nuevoCurso);
                 db.SaveChanges();
 
@@ -107,13 +113,9 @@ namespace Digital_Scilicet.Controllers
         {
             Curso curso = db.Cursos.Include(c => c.Owner).FirstOrDefault(c => c.ID == ID);
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-            Usuario user = db.Usuarios.Include(u => u.Cursos).FirstOrDefault(u => u.Mail.Equals(usuario.Mail));
-
             if(curso != null && usuario != null)
 
             {
-                user.Cursos.Add(curso);
-                db.Usuarios.Update(user);
                 curso.Owner.Add(usuario);
                 db.Cursos.Update(curso);
                 db.SaveChanges();
@@ -134,7 +136,6 @@ namespace Digital_Scilicet.Controllers
             if(usuario != null)
             {
                 Usuario user = db.Usuarios.Include(u => u.Cursos).FirstOrDefault(u => u.Mail.Equals(usuario.Mail));
-                var lista = user.Cursos.ToList();
                 return View(user.Cursos.ToList());
             }
             else
@@ -142,6 +143,20 @@ namespace Digital_Scilicet.Controllers
                 return View("Login");
             }
             
+        }
+
+        public IActionResult VerCurso(long ID)
+        {
+            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
+
+            if(curso != null)
+            {
+                return View(curso);
+            }
+            else
+            {
+                return View("MisCursos");
+            }
         }
 
         public JsonResult RegistrarUsuario(string mail, string nombre, string username, string password)

@@ -17,6 +17,9 @@ namespace Cursos.Models
         public double Precio { get; set; }
         [Required]
         public int Categoria { get; set; }
+        [Required]
         public List<Usuario> Owner { get; set; }
+        public string Url { get; set;}
+        
     }
 }
