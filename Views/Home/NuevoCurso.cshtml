@@ -3,10 +3,31 @@
 }
 
 <form class="contact-form" action="@Url.Action("CrearCurso", "Home")" method="POST">
-    <input type="text" class="contact-form-text" name="nombre" placeholder="Nombre del curso">
-    <input type="text" class="contact-form-text" name="precio" placeholder="Precio del curso">
-    <input type="text" class="contact-form-text" name="categoria" placeholder="Categoria del curso">
-    <input type="text" class="contact-form-text" name="url" placeholder="Url del video">
-    <textarea class="contact-form-text" maxlength="100" name="descripcion" placeholder="Descripción del curso"></textarea>
+    <input type="text" class="contact-form-text" name="nombre" placeholder="Nombre del curso" required>
+    <input type="text" class="contact-form-text" name="precio" placeholder="Precio del curso" required>
+    <input type="text" class="contact-form-text" name="url" placeholder="Url del video" required>
+    <input type="text" class="contact-form-text" name="cantidad" placeholder="Cantidad de videos" required>
+    <div class="custom-select" style="width:200px;">
+          <select name="categoria" required>
+          <option value="1">Base de Datos</option>
+          <option value="2">Desarrollo de Videojuegos</option>
+          <option value="3">Desarrollo Mobile</option>
+          <option value="4">Desarrollo Web</option>
+          </select>
+     </div>
+     <div class="custom-select" style="width:200px;">
+          <select name="idioma" required>
+          <option value="Español">Español</option>
+          <option value="Inglés">Inglés</option>
+          <option value="Portugués">Portugués</option>
+          </select>
+     </div>
+     <div class="custom-select" style="width:200px;">
+          <select name="subtitulos" required>
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+          </select>
+     </div>
+    <textarea class="contact-form-text" name="descripcion" placeholder="Descripción del curso" required></textarea>
     <input type="submit" class="contact-form-btn" value="Crear">
   </form>

@@ -30,7 +30,6 @@ namespace Digital_Scilicet
 
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(10);
                 options.Cookie.Name = ".DigitalScilicet.Session";
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;

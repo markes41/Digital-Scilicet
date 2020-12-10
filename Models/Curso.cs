@@ -18,6 +18,12 @@ namespace Cursos.Models
         [Required]
         public int Categoria { get; set; }
         [Required]
+        public int CantidadVideos { get; set; }
+        [Required]
+        public string Idioma { get; set; }
+        [Required]
+        public string Subtitulos { get; set;}
+        [Required]
         public List<Usuario> Owner { get; set; }
         public string Url { get; set;}
         

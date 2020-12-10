@@ -2,14 +2,16 @@
 using Cursos.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Digital_Scilicet.Migrations
 {
     [DbContext(typeof(CursosContext))]
-    partial class CursosContextModelSnapshot : ModelSnapshot
+    [Migration("20201209234018_v2.7")]
+    partial class v27
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,10 +54,6 @@ namespace Digital_Scilicet.Migrations
 
                     b.Property<double>("Precio")
                         .HasColumnType("REAL");
-
-                    b.Property<string>("Subtitulos")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Titulo")
                         .IsRequired()

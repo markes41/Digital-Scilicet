@@ -2,19 +2,46 @@
 @section Styles{
     <link rel="stylesheet" type="text/css" href="~/css/vercurso.css"/>
 }
+        <div class="material-curso">
+            <section id="video" class="col-md-7"></section>
+            <main id="lista-videos" class="col-md-5 pre-scrollable" style="height: 688px;"></main>
+        </div>
 
-<div class="container">
+        <div class="row">
+            <div class="about-curso">
+                    <div class="header-content">
+                        <p>Acerca de este curso <br> @Model.Titulo</p>
+                    </div>
+                    <hr>
+                    <div class="titulos-display">
+                        <p>Por cifras</p>
+                        <div class="margin-text">
+                            <p>Idioma: @Model.Idioma</p>
+                            <p>Cantidad de clases: @Model.CantidadVideos</p>
+                            <p>Subtítulos: @Model.Subtitulos</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="titulos-display">
+                        <p>Descripción</p>
+                        <p class="margin-text">@Model.Descripcion</p>
+                    </div>
+                    <hr>
+                    <div class="titulos-display">
+                        <p>Certificado</p>
+                        <p class="margin-text resp-certificado">Cuenta con certificado avalado por el Ministerio de Educación</p>
+                    </div>
+                    <hr>
+                </div>
+        </div>
+
+        
 
 
-	<section id="video">
 
-	</section>
+	
 
-	<main id="lista-videos">
 
-	</main>
-
-</div>
 
 @section Scripts{
     <script>
@@ -28,7 +55,7 @@
             var options = {
                 part: 'snippet',
                 key: key,
-                maxResults: 20,
+                maxResults: @Model.CantidadVideos,
                 playlistId: playlistId
             }
 
@@ -73,11 +100,14 @@
                 });
             }
 
-            /*$('main').on('click', 'article', function () {
+            $('main').on('click', 'article', function () {
                 var id = $(this).attr('data-key');
                 mainVid(id);
-            });*/
+            });
 
+            $("#toggle-cursos").on('click', function(){
+                $(".item").toggle();
+            });
 
         });
     </script>

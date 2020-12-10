@@ -25,7 +25,8 @@ namespace Digital_Scilicet.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            return View(usuario);
         }
 
         public IActionResult Nosotros()
@@ -75,7 +76,7 @@ namespace Digital_Scilicet.Controllers
             return View(curso);
         }
 
-        public JsonResult CrearCurso(string nombre, string descripcion, double precio, int categoria, string url)
+        public IActionResult CrearCurso(string nombre, string descripcion, double precio, int categoria, string url, string idioma, string subtitulos, int cantidad)
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
 
@@ -88,17 +89,20 @@ namespace Digital_Scilicet.Controllers
                     Descripcion = descripcion,
                     Precio = precio,
                     Categoria = categoria,
-                    Url = url
+                    Url = url,
+                    Idioma = idioma,
+                    Subtitulos = subtitulos,
+                    CantidadVideos = cantidad
                 };
                 db.Cursos.Add(nuevoCurso);
                 db.SaveChanges();
 
-                return Json("ok");
+                return View("NuevoCurso");
 
             }
             else
             {
-                return Json("No estás logeado");
+                return View("Login");
             }
 
         }
