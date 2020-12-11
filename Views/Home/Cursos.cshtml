@@ -1,5 +1,7 @@
 @{
     bool tieneCurso = (ViewBag.tieneCurso != null);
+
+    bool comproCurso = (ViewBag.comproCurso != null);
 }
 @model List<Curso>
 
@@ -105,9 +107,14 @@
                 }
             </section>    
 
-            @if(tieneCurso)
+        @if(tieneCurso)
         {
             <iframe onload="tieneCurso()" style="position: absolute; top: -1000px;"></iframe>
+        }
+
+        @if(comproCurso)
+        {
+            <iframe onload="comproCurso()" style="position: absolute; top: -1000px;"></iframe>
         }
             
 @section Scripts{

@@ -160,7 +160,8 @@ namespace Digital_Scilicet.Controllers
                         curso.Owner.Add(usuario);
                         db.Cursos.Update(curso);
                         db.SaveChanges();
-                        return View("Index");
+                        ViewBag.comproCurso = true;
+                        return View("Cursos", db.Cursos.ToList());
                     }
                     else
                     {

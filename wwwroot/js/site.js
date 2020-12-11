@@ -60,8 +60,17 @@ function cursoExist() {
 function tieneCurso() {
   Swal.fire({
     title: '¡ERROR!',
-    text: 'Ya compraste este curso, revisá tu sección "Mis Cursos".',
+    text: 'Ya compraste este curso, revisá tu sección "Mis Cursos"',
     icon: 'error',
+    confirmButtonText: 'Seguir comprando'
+  })
+}
+
+function comproCurso() {
+  Swal.fire({
+    title: 'BIEN!',
+    text: 'Tu compra finalizó con éxito. Podés ver tu nuevo curso yendo a la sección "Mis Cursos".',
+    icon: 'success',
     confirmButtonText: 'Seguir comprando'
   })
 }
