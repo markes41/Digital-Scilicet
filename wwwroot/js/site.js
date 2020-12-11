@@ -46,7 +46,23 @@
         slidesToShow: 3,
         slidesToScroll: 3
       });
-
-
 });
+
+function cursoExist() {
+  Swal.fire({
+    title: '¡ERROR!',
+    text: 'Ya existe un curso con el nombre o url que usted ha ingresado.',
+    icon: 'error',
+    confirmButtonText: 'Volver a intentar'
+  })
+}
+
+function tieneCurso() {
+  Swal.fire({
+    title: '¡ERROR!',
+    text: 'Ya compraste este curso, revisá tu sección "Mis Cursos".',
+    icon: 'error',
+    confirmButtonText: 'Seguir comprando'
+  })
+}
 

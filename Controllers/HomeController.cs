@@ -25,14 +25,23 @@ namespace Digital_Scilicet.Controllers
 
         public IActionResult Index()
         {
-            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-            return View(usuario);
+            return View();
+            
         }
 
         public IActionResult Nosotros()
         {
-            return View();
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            if(usuario != null)
+            {
+                return View(usuario);
+            }
+            else
+            {
+                return View();
+            }
         }
+
 
         public IActionResult FAQs()
         {
@@ -61,7 +70,16 @@ namespace Digital_Scilicet.Controllers
 
         public IActionResult Login()
         {
-            return View();
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+
+            if(usuario == null)
+            {
+                return View();
+            }
+            else
+            {
+                return View("Index");
+            }
         }
 
         public JsonResult ConsultarCurso(long ID)
@@ -69,35 +87,37 @@ namespace Digital_Scilicet.Controllers
             Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
             return Json(curso);
         }
-
-        public IActionResult testCurso()
-        {
-            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == 22);
-            return View(curso);
-        }
-
         public IActionResult CrearCurso(string nombre, string descripcion, double precio, int categoria, string url, string idioma, string subtitulos, int cantidad)
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            Curso curso = db.Cursos.FirstOrDefault(c => c.Titulo == nombre || c.Url == url);
 
             if(usuario != null)
             {
                 
-                Curso nuevoCurso = new Curso
+                if(curso == null)
                 {
-                    Titulo = nombre,
-                    Descripcion = descripcion,
-                    Precio = precio,
-                    Categoria = categoria,
-                    Url = url,
-                    Idioma = idioma,
-                    Subtitulos = subtitulos,
-                    CantidadVideos = cantidad
-                };
-                db.Cursos.Add(nuevoCurso);
-                db.SaveChanges();
+                    Curso nuevoCurso = new Curso
+                    {
+                        Titulo = nombre,
+                        Descripcion = descripcion,
+                        Precio = precio,
+                        Categoria = categoria,
+                        Url = url,
+                        Idioma = idioma,
+                        Subtitulos = subtitulos,
+                        CantidadVideos = cantidad
+                    };
+                    db.Cursos.Add(nuevoCurso);
+                    db.SaveChanges();
 
-                return View("NuevoCurso");
+                    return View("NuevoCurso");
+                }
+                else
+                {
+                    ViewBag.existeCurso = true;
+                    return View("NuevoCurso");
+                }
 
             }
             else
@@ -117,13 +137,41 @@ namespace Digital_Scilicet.Controllers
         {
             Curso curso = db.Cursos.Include(c => c.Owner).FirstOrDefault(c => c.ID == ID);
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-            if(curso != null && usuario != null)
+            
+            if(usuario != null)
+            {  
+                usuario = db.Usuarios.Include(u => u.Cursos).FirstOrDefault(u => u.Mail.Equals(usuario.Mail));          
+                var tieneCurso = false;
+                for(int i = 0; i < curso.Owner.Count; i++)
+                {
+                    if(curso.Owner.ElementAt(i) == usuario)
+                    {
+                        tieneCurso = true;
+                        break;
+                    }
+                }
 
-            {
-                curso.Owner.Add(usuario);
-                db.Cursos.Update(curso);
-                db.SaveChanges();
-                return View("Index");
+                
+                if(tieneCurso == false)
+                {
+                    if(curso != null && usuario != null)
+
+                    {
+                        curso.Owner.Add(usuario);
+                        db.Cursos.Update(curso);
+                        db.SaveChanges();
+                        return View("Index");
+                    }
+                    else
+                    {
+                        return View("Login");
+                    }
+                }
+                else
+                {
+                    ViewBag.tieneCurso = true;
+                    return View("Cursos", db.Cursos.ToList());
+                }
             }
             else
             {
@@ -189,23 +237,23 @@ namespace Digital_Scilicet.Controllers
             Usuario usuarioCheckMail = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail));
             Usuario checkUserLogged = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
 
-            if(usuarioCheckMail != null && checkUserLogged == null)
+            if(checkUserLogged == null)
             {
-                if(usuarioCheckMail.Password.Equals(password))
+                if(usuarioCheckMail != null && usuarioCheckMail.Password.Equals(password))
                 {
                     HttpContext.Session.Set<Usuario>("UsuarioLogueado", usuarioCheckMail);
-                    ViewBag.username = usuarioCheckMail.Username;
-                    ViewBag.UsuarioConectado = true;
                     return View("Index");
                 }
                 else
                 {
+
+                    ViewBag.errorCredenciales = true;
                     return View("Login");
                 }
             }
             else
             {
-                return View("Login");
+                return View("Index");
             }
         }
 

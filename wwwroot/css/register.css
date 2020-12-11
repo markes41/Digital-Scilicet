@@ -98,6 +98,11 @@ a {
     text-decoration: none
 }
 
+.error-credenciales{
+    text-align: center;
+    color: red;
+}
+
 @media (max-width: 600px) {
     .main {
         border-radius: 0px;

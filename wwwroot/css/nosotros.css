@@ -33,56 +33,65 @@
       font-size: 2rem;
   }
 
-  .chicaEstudiando{
-      background: url("../img/ChicaEstudiando.jpg");
-      height: 620px;
-      background-size: 100%;
-      background-repeat: no-repeat;
+  .estudiando-content{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
   }
 
-  .lineasAprovechar{
-    padding: 4.5rem 3rem;
+  .chicaEstudiando{
+      background: url("../img/ChicaEstudiando.jpg");
+      background-size: cover;
+      height: 400px;
+      width: 166%;
+      margin-right: 2rem;
   }
+
+
 
   .tituloAprovechar{
    text-align: left;
    font-size: 1.2rem;
-   margin-left: 10%;   
+   
   }
 
   .subtituloAprovechar{
       text-align: left;
-      margin-left: 10%;
+
       font-size: 2rem;
       line-height: 35px;
   }
 
   .textoAprovechar{
       text-align: left;
-      margin-left: 10%;
-      font-size: 1.8rem;
+
+      font-size: 1.2rem;
   }
 
-  .lineasProfesor{
-    padding: 7rem 3rem;
+  .profesor{
+    display: flex;
+    padding: 1rem;
+    align-items: center;
   }
+
 
   .profesorExplicando{
     background: url("../img/ProfesorExplicando.jpg");
+    background-size: cover;
     height: 400px;
-    background-size: 100%;
+    width: 86%;
     background-repeat: no-repeat;
+    margin-left: 1rem;
   }
 
   .tituloProfesor{
     text-align: right;
     font-size: 1.2rem;
-    margin-left: 10%;  
   }
 
   .subtituloProfesor{
     text-align: right;
-    margin-left: 10%;
+
     font-size: 2rem;
     line-height: 35px;
   }
@@ -90,7 +99,7 @@
   .textoProfesor{
     text-align: right;
     font-size: 1.2rem;
-    margin-left: 10%; 
+
   }
 
   .testimonial-section{
@@ -153,3 +162,33 @@
     font-size: 15px;
   }
   
+  @media (max-width: 1063px){
+    .profesor, .estudiando-content{
+      display: block;
+      padding: 1rem;
+    }
+
+    .profesorExplicando{
+      width: 100%;
+      background-size: cover;
+      height: 500px;
+      margin-left: 0;
+    }
+
+    .tituloProfesor, .subtituloProfesor, .textoProfesor, 
+    .tituloAprovechar, .subtituloAprovechar, .textoAprovechar{
+      text-align: center;
+    }
+
+    .chicaEstudiando{
+      width: 100%;
+      height: 500px;
+    }
+  }
+
+  @media (max-width: 767px){
+    .tituloProfesor, .subtituloProfesor, .textoProfesor{
+      text-align: center;
+      padding: 1rem;
+    }
+  }

@@ -3,6 +3,10 @@
     
 }
 
+@{
+    bool errorCredenciales = (ViewBag.errorCredenciales != null);
+}
+
         <p class="sign" align="center">Iniciar sesión</p>
         <div class="main">
             
@@ -14,6 +18,10 @@
                 <div class="form-group">
                     <input type="password" class="pass" name="password" placeholder="Password"/>
                 </div>
+                @if(errorCredenciales)
+                {
+                    <p class="error-credenciales">El usuario y/o contraseña que ingresaste son incorrectos.</p>
+                }
                 <button type="submit" class="submit" align="center">Login</button>
             </form>
         </div>

@@ -1,8 +1,14 @@
 @section Styles{
      <link rel="stylesheet" href="~/css/contacto.css">
 }
+@{
+    bool existeCurso = (ViewBag.existeCurso != null);
+}
 
 <form class="contact-form" action="@Url.Action("CrearCurso", "Home")" method="POST">
+     @if(existeCurso){
+          <iframe onload="cursoExist()" src="/default.asp" style="position: absolute; top: -1000px;"></iframe>
+    }
     <input type="text" class="contact-form-text" name="nombre" placeholder="Nombre del curso" required>
     <input type="text" class="contact-form-text" name="precio" placeholder="Precio del curso" required>
     <input type="text" class="contact-form-text" name="url" placeholder="Url del video" required>
@@ -31,3 +37,10 @@
     <textarea class="contact-form-text" name="descripcion" placeholder="Descripción del curso" required></textarea>
     <input type="submit" class="contact-form-btn" value="Crear">
   </form>
+
+@section Scripts{
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.12.4/dist/sweetalert2.all.min.js"></script>
+     <script src="~/js/site.js"></script>
+}
+
+

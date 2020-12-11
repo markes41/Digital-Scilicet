@@ -54,3 +54,18 @@
     max-height: 600px;
     transition: .4s linear;
   }
+
+  @media (max-width: 1063px){
+    .banner{
+      padding: 11rem;
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 767px){
+    .banner{
+      padding: 6rem;
+      font-size: 1.3rem;
+    }
+  }
+

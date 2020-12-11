@@ -15648,6 +15648,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Shared\\_LayoutWithUser.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutWithUser.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\Login.cshtml",
       "TargetPath": "Views\\Home\\Login.cshtml",
       "FileKind": "mvc"
@@ -15668,8 +15673,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\testCurso.cshtml",
-      "TargetPath": "Views\\Home\\testCurso.cshtml",
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Shared\\_LayoutWithoutUser.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutWithoutUser.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15680,11 +15685,6 @@
     {
       "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     }
   ],
