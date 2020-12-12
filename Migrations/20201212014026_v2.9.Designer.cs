@@ -2,14 +2,16 @@
 using Cursos.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Digital_Scilicet.Migrations
 {
     [DbContext(typeof(CursosContext))]
-    partial class CursosContextModelSnapshot : ModelSnapshot
+    [Migration("20201212014026_v2.9")]
+    partial class v29
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,9 +38,6 @@ namespace Digital_Scilicet.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Autor")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("CantidadVideos")
                         .HasColumnType("INTEGER");
 
@@ -55,6 +54,9 @@ namespace Digital_Scilicet.Migrations
 
                     b.Property<double>("Precio")
                         .HasColumnType("REAL");
+
+                    b.Property<string>("Rol")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Subtitulos")
                         .IsRequired()
@@ -84,9 +86,6 @@ namespace Digital_Scilicet.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Rol")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Username")

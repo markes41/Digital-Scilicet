@@ -26,6 +26,6 @@ namespace Cursos.Models
         [Required]
         public List<Usuario> Owner { get; set; }
         public string Url { get; set;}
-        
+        public string Autor { get; set; }
     }
 }

@@ -16,5 +16,6 @@ namespace Cursos.Models
         [Required]
         public string Password { get; set; }
         public List<Curso> Cursos { get; set; }
+        public string Rol { get; set;}
     }
 }

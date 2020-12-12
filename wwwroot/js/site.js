@@ -75,3 +75,12 @@ function comproCurso() {
   })
 }
 
+function comprobar()
+{   
+    if (document.getElementById("chec").checked)
+      document.getElementById('boton').readOnly = false;
+        
+    else
+      document.getElementById('boton').readOnly = true;
+        
+}

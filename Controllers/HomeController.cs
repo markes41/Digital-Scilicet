@@ -28,7 +28,6 @@ namespace Digital_Scilicet.Controllers
             return View();
             
         }
-
         public IActionResult Nosotros()
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
@@ -41,33 +40,44 @@ namespace Digital_Scilicet.Controllers
                 return View();
             }
         }
-
-
         public IActionResult FAQs()
         {
             return View();
         } 
-
         public IActionResult Contacto()
         {
             return View();
         } 
-
         public IActionResult Cursos()
         {
             return View(db.Cursos.ToList());
         } 
-
         public IActionResult NuevoCurso()
         {
-            return View();
-        }
-        
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            
+            if(usuario != null)
+            {
+                if(usuario.Rol.Equals("Administrador") && usuario.Rol != null)
+                {   
+                    return View();
+                }
+                else
+                {
+                    return View("Index");
+                }
+            }
+            else
+            {
+                return View("Index");
+            }
+
+            
+        } 
         public IActionResult Register()
         {
             return View();
         }
-
         public IActionResult Login()
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
@@ -81,58 +91,80 @@ namespace Digital_Scilicet.Controllers
                 return View("Index");
             }
         }
-
-        public JsonResult ConsultarCurso(long ID)
-        {
-            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
-            return Json(curso);
-        }
-        public IActionResult CrearCurso(string nombre, string descripcion, double precio, int categoria, string url, string idioma, string subtitulos, int cantidad)
+        public IActionResult ConsultarCurso(long ID)
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-            Curso curso = db.Cursos.FirstOrDefault(c => c.Titulo == nombre || c.Url == url);
-
             if(usuario != null)
             {
-                
-                if(curso == null)
-                {
-                    Curso nuevoCurso = new Curso
-                    {
-                        Titulo = nombre,
-                        Descripcion = descripcion,
-                        Precio = precio,
-                        Categoria = categoria,
-                        Url = url,
-                        Idioma = idioma,
-                        Subtitulos = subtitulos,
-                        CantidadVideos = cantidad
-                    };
-                    db.Cursos.Add(nuevoCurso);
-                    db.SaveChanges();
-
-                    return View("NuevoCurso");
+                if(usuario.Rol.Equals("Administrador") && usuario.Rol != null)
+                {   
+                    Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
+                    return Json(curso);
                 }
                 else
                 {
-                    ViewBag.existeCurso = true;
-                    return View("NuevoCurso");
+                    return View("Index");
                 }
-
             }
             else
             {
-                return View("Login");
+                return View("Index");
             }
+            
+        }
+        public IActionResult CrearCurso(string nombre, string descripcion, double precio, int categoria, string url, string idioma, string subtitulos, int cantidad, string autor)
+        {
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            Curso curso = db.Cursos.FirstOrDefault(c => c.Titulo == nombre || c.Url == url);
+            if(usuario.Rol.Equals("Administrador"))
+            {
+                if(usuario != null)
+                {
+                    
+                    if(curso == null)
+                    {
+                        Curso nuevoCurso = new Curso
+                        {
+                            Titulo = nombre,
+                            Descripcion = descripcion,
+                            Precio = precio,
+                            Categoria = categoria,
+                            Url = url,
+                            Idioma = idioma,
+                            Subtitulos = subtitulos,
+                            CantidadVideos = cantidad,
+                            Autor = autor
+                        };
+                        db.Cursos.Add(nuevoCurso);
+                        db.SaveChanges();
+
+                        return View("NuevoCurso");
+                    }
+                    else
+                    {
+                        ViewBag.existeCurso = true;
+                        return View("NuevoCurso");
+                    }
+
+                }
+                else
+                {
+                    return View("Login");
+                }
+                }
+            else
+            {
+                ViewBag.autorizado = true;
+                return View("Index");
+            }
+            
 
         }
-
         public IActionResult CursoInformacion(int ID)
         {
             Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
             return View(curso);
         }
-
         public IActionResult ComprarCurso(int ID)
         {
             Curso curso = db.Cursos.Include(c => c.Owner).FirstOrDefault(c => c.ID == ID);
@@ -180,7 +212,6 @@ namespace Digital_Scilicet.Controllers
             }
             
         }
-
         public IActionResult MisCursos()
         {   
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
@@ -197,42 +228,74 @@ namespace Digital_Scilicet.Controllers
             }
             
         }
-
         public IActionResult VerCurso(long ID)
         {
-            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
+            Curso curso = db.Cursos.Include(c => c.Owner).FirstOrDefault(c => c.ID == ID);
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
 
-            if(curso != null)
+            if(usuario != null)
             {
-                return View(curso);
+                if(curso != null)
+                {
+                    usuario = db.Usuarios.Include(u => u.Cursos).FirstOrDefault(u => u.Mail.Equals(usuario.Mail));          
+                    var tieneCurso = false;
+                    for(int i = 0; i < curso.Owner.Count; i++)
+                    {
+                        if(curso.Owner.ElementAt(i) == usuario)
+                        {
+                            tieneCurso = true;
+                            break;
+                        }
+                    }
+
+                    if(tieneCurso)
+                    {
+                        return View(curso);
+                    }
+                    else
+                    {
+                        return View("MisCursos", usuario.Cursos.ToList());
+                    }
+                }
+                else
+                {
+                    return View("MisCursos", usuario.Cursos.ToList());
+                }
             }
             else
             {
-                return View("MisCursos");
+                return View("Login");
             }
+            
         }
-
-        public JsonResult RegistrarUsuario(string mail, string nombre, string username, string password)
+        public IActionResult RegistrarUsuario(string mail, string nombre, string username, string password, string claveadmin)
         {
             Usuario usuarioCheck = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail));
+            string clave = "qwerty";
+            string rol;
+
+            if(clave.Equals(claveadmin))
+                rol = "Administrador";
+            else
+                rol = "Usuario";
 
             if(usuarioCheck == null){
                 Usuario nuevoUsuario = new Usuario{
                 Mail = mail,
                 Nombre = nombre,
                 Username = username,
-                Password = password
+                Password = password,
+                Rol = rol
             };
 
             db.Usuarios.Add(nuevoUsuario);
             db.SaveChanges();
-            return Json("Se creó el usuario con éxito");
+            return View("Login");
 
             }else{
                 return Json("Ya existe un usuario con ese mail");
             }   
         }
-
         public IActionResult LogearUsuario(string mail, string password)
         {
             Usuario usuarioCheckMail = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail));
@@ -257,19 +320,16 @@ namespace Digital_Scilicet.Controllers
                 return View("Index");
             }
         }
-
         public JsonResult ConsultarUsuario()
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
             return Json(usuario);
         }
-
         public IActionResult Deslogear()
         {
             HttpContext.Session.Remove("UsuarioLogueado");
             return View("Index");
         }
-
         public IActionResult EnviarContacto(string nombre, string correo, string numTelefono, string motivo, string mensaje)
         {
             try
