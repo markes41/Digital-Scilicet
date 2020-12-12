@@ -270,7 +270,7 @@ namespace Digital_Scilicet.Controllers
         }
         public IActionResult RegistrarUsuario(string mail, string nombre, string username, string password, string claveadmin)
         {
-            Usuario usuarioCheck = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail));
+            Usuario usuarioCheck = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail) || u.Username.Equals(username));
             string clave = "qwerty";
             string rol;
 
@@ -293,7 +293,8 @@ namespace Digital_Scilicet.Controllers
             return View("Login");
 
             }else{
-                return Json("Ya existe un usuario con ese mail");
+                ViewBag.existeUsuario = true;
+                return View("Register");
             }   
         }
         public IActionResult LogearUsuario(string mail, string password)

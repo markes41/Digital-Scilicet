@@ -3,11 +3,19 @@
     
 }
 
+@{
+    bool existeUsuario = (ViewBag.existeUsuario != null);
+}
+
         <p class="sign" align="center">¡Registrate!</p>
         <div class="main">
             
 
             <form action="@Url.Action("RegistrarUsuario", "Home")" method="POST" class="form1">
+                @if(existeUsuario)
+                {
+                    <p class="error-credenciales">Ya existe un usuario registrado con ese mail o username.</p>
+                }
                 <div class="form-group">
                     <input class="un " type="email"  name="mail" placeholder="Correo electrónico" align="center"/>
                 </div>
