@@ -15603,13 +15603,18 @@
   "RootNamespace": "Digital_Scilicet",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\MisCursos.cshtml",
-      "TargetPath": "Views\\Home\\MisCursos.cshtml",
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Curso\\Cursos.cshtml",
+      "TargetPath": "Views\\Curso\\Cursos.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\Cursos.cshtml",
-      "TargetPath": "Views\\Home\\Cursos.cshtml",
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Curso\\MisCursos.cshtml",
+      "TargetPath": "Views\\Curso\\MisCursos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Curso\\NuevoCurso.cshtml",
+      "TargetPath": "Views\\Curso\\NuevoCurso.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15623,6 +15628,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Curso\\VerCurso.cshtml",
+      "TargetPath": "Views\\Curso\\VerCurso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\Contacto.cshtml",
       "TargetPath": "Views\\Home\\Contacto.cshtml",
       "FileKind": "mvc"
@@ -15633,13 +15643,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\NuevoCurso.cshtml",
-      "TargetPath": "Views\\Home\\NuevoCurso.cshtml",
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Curso\\CursoInformacion.cshtml",
+      "TargetPath": "Views\\Curso\\CursoInformacion.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15658,11 +15668,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\CursoInformacion.cshtml",
-      "TargetPath": "Views\\Home\\CursoInformacion.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -15675,11 +15680,6 @@
     {
       "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Shared\\_LayoutWithoutUser.cshtml",
       "TargetPath": "Views\\Shared\\_LayoutWithoutUser.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Home\\VerCurso.cshtml",
-      "TargetPath": "Views\\Home\\VerCurso.cshtml",
       "FileKind": "mvc"
     },
     {

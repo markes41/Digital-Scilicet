@@ -48,10 +48,6 @@ namespace Digital_Scilicet.Controllers
         {
             return View();
         } 
-        public IActionResult Cursos()
-        {
-            return View(db.Cursos.ToList());
-        } 
         public IActionResult NuevoCurso()
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
@@ -76,7 +72,16 @@ namespace Digital_Scilicet.Controllers
         } 
         public IActionResult Register()
         {
-            return View();
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+
+            if(usuario == null)
+            {
+                return View();
+            }
+            else
+            {
+                return View("Index");
+            }
         }
         public IActionResult Login()
         {
@@ -90,183 +95,6 @@ namespace Digital_Scilicet.Controllers
             {
                 return View("Index");
             }
-        }
-        public IActionResult ConsultarCurso(long ID)
-        {
-            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-            if(usuario != null)
-            {
-                if(usuario.Rol.Equals("Administrador") && usuario.Rol != null)
-                {   
-                    Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
-                    return Json(curso);
-                }
-                else
-                {
-                    return View("Index");
-                }
-            }
-            else
-            {
-                return View("Index");
-            }
-            
-        }
-        public IActionResult CrearCurso(string nombre, string descripcion, double precio, int categoria, string url, string idioma, string subtitulos, int cantidad, string autor)
-        {
-            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-            Curso curso = db.Cursos.FirstOrDefault(c => c.Titulo == nombre || c.Url == url);
-            if(usuario.Rol.Equals("Administrador"))
-            {
-                if(usuario != null)
-                {
-                    
-                    if(curso == null)
-                    {
-                        Curso nuevoCurso = new Curso
-                        {
-                            Titulo = nombre,
-                            Descripcion = descripcion,
-                            Precio = precio,
-                            Categoria = categoria,
-                            Url = url,
-                            Idioma = idioma,
-                            Subtitulos = subtitulos,
-                            CantidadVideos = cantidad,
-                            Autor = autor
-                        };
-                        db.Cursos.Add(nuevoCurso);
-                        db.SaveChanges();
-
-                        return View("NuevoCurso");
-                    }
-                    else
-                    {
-                        ViewBag.existeCurso = true;
-                        return View("NuevoCurso");
-                    }
-
-                }
-                else
-                {
-                    return View("Login");
-                }
-                }
-            else
-            {
-                ViewBag.autorizado = true;
-                return View("Index");
-            }
-            
-
-        }
-        public IActionResult CursoInformacion(int ID)
-        {
-            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
-            return View(curso);
-        }
-        public IActionResult ComprarCurso(int ID)
-        {
-            Curso curso = db.Cursos.Include(c => c.Owner).FirstOrDefault(c => c.ID == ID);
-            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-            
-            if(usuario != null)
-            {  
-                usuario = db.Usuarios.Include(u => u.Cursos).FirstOrDefault(u => u.Mail.Equals(usuario.Mail));          
-                var tieneCurso = false;
-                for(int i = 0; i < curso.Owner.Count; i++)
-                {
-                    if(curso.Owner.ElementAt(i) == usuario)
-                    {
-                        tieneCurso = true;
-                        break;
-                    }
-                }
-
-                
-                if(tieneCurso == false)
-                {
-                    if(curso != null && usuario != null)
-
-                    {
-                        curso.Owner.Add(usuario);
-                        db.Cursos.Update(curso);
-                        db.SaveChanges();
-                        ViewBag.comproCurso = true;
-                        return View("Cursos", db.Cursos.ToList());
-                    }
-                    else
-                    {
-                        return View("Login");
-                    }
-                }
-                else
-                {
-                    ViewBag.tieneCurso = true;
-                    return View("Cursos", db.Cursos.ToList());
-                }
-            }
-            else
-            {
-                return View("Login");
-            }
-            
-        }
-        public IActionResult MisCursos()
-        {   
-            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-            
-
-            if(usuario != null)
-            {
-                Usuario user = db.Usuarios.Include(u => u.Cursos).FirstOrDefault(u => u.Mail.Equals(usuario.Mail));
-                return View(user.Cursos.ToList());
-            }
-            else
-            {
-                return View("Login");
-            }
-            
-        }
-        public IActionResult VerCurso(long ID)
-        {
-            Curso curso = db.Cursos.Include(c => c.Owner).FirstOrDefault(c => c.ID == ID);
-            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-
-            if(usuario != null)
-            {
-                if(curso != null)
-                {
-                    usuario = db.Usuarios.Include(u => u.Cursos).FirstOrDefault(u => u.Mail.Equals(usuario.Mail));          
-                    var tieneCurso = false;
-                    for(int i = 0; i < curso.Owner.Count; i++)
-                    {
-                        if(curso.Owner.ElementAt(i) == usuario)
-                        {
-                            tieneCurso = true;
-                            break;
-                        }
-                    }
-
-                    if(tieneCurso)
-                    {
-                        return View(curso);
-                    }
-                    else
-                    {
-                        return View("MisCursos", usuario.Cursos.ToList());
-                    }
-                }
-                else
-                {
-                    return View("MisCursos", usuario.Cursos.ToList());
-                }
-            }
-            else
-            {
-                return View("Login");
-            }
-            
         }
         public IActionResult RegistrarUsuario(string mail, string nombre, string username, string password, string claveadmin)
         {
@@ -387,7 +215,7 @@ namespace Digital_Scilicet.Controllers
             {
                 Console.Out.Write(e);
             }
-            return View("ok!");
+            return View("Contacto");
         }
 
 

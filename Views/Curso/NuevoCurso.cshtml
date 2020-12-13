@@ -5,7 +5,7 @@
     bool existeCurso = (ViewBag.existeCurso != null);
 }
 
-<form class="contact-form" action="@Url.Action("CrearCurso", "Home")" method="POST">
+<form class="contact-form" action="@Url.Action("CrearCurso", "Curso")" method="POST">
      @if(existeCurso){
           <iframe onload="cursoExist()" src="/default.asp" style="position: absolute; top: -1000px;"></iframe>
     }
@@ -18,8 +18,8 @@
           <select name="categoria" required>
           <option value="1">Base de Datos</option>
           <option value="2">Desarrollo de Videojuegos</option>
-          <option value="3">Desarrollo Mobile</option>
-          <option value="4">Desarrollo Web</option>
+          <option value="4">Desarrollo Mobile</option>
+          <option value="3">Desarrollo Web</option>
           </select>
      </div>
      <div class="custom-select" style="width:200px;">

@@ -326,12 +326,10 @@ C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Digital-Scilicet
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Digital-Scilicet.TagHelpers.output.cache
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Digital-Scilicet.RazorCoreGenerate.cache
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\Contacto.cshtml.g.cs
-C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\Cursos.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\FAQs.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\Nosotros.cshtml.g.cs
-C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\NuevoCurso.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\Register.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -345,8 +343,10 @@ C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Digital-Scilicet
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\ref\Digital-Scilicet.dll
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Digital-Scilicet.pdb
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Digital-Scilicet.genruntimeconfig.cache
-C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\CursoInformacion.cshtml.g.cs
-C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\MisCursos.cshtml.g.cs
-C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Home\VerCurso.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Shared\_LayoutWithoutUser.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Shared\_LayoutWithUser.cshtml.g.cs
+C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Curso\CursoInformacion.cshtml.g.cs
+C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Curso\Cursos.cshtml.g.cs
+C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Curso\MisCursos.cshtml.g.cs
+C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Curso\NuevoCurso.cshtml.g.cs
+C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Curso\VerCurso.cshtml.g.cs
