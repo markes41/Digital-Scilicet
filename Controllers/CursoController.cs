@@ -40,12 +40,12 @@ namespace Digital_Scilicet.Controllers
                 }
                 else
                 {
-                    return View("Index");
+                    return RedirectToAction("Index", "Home");
                 }
             }
             else
             {
-                return View("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             
@@ -63,12 +63,12 @@ namespace Digital_Scilicet.Controllers
                 }
                 else
                 {
-                    return View("Index");
+                    return RedirectToAction("Index", "Home");
                 }
             }
             else
             {
-                return View("Index");
+                return RedirectToAction("Index", "Home");
             }
             
         }

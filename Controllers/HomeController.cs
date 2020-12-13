@@ -48,28 +48,6 @@ namespace Digital_Scilicet.Controllers
         {
             return View();
         } 
-        public IActionResult NuevoCurso()
-        {
-            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-            
-            if(usuario != null)
-            {
-                if(usuario.Rol.Equals("Administrador") && usuario.Rol != null)
-                {   
-                    return View();
-                }
-                else
-                {
-                    return View("Index");
-                }
-            }
-            else
-            {
-                return View("Index");
-            }
-
-            
-        } 
         public IActionResult Register()
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");

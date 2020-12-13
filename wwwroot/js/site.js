@@ -84,3 +84,17 @@ function comprobar()
       document.getElementById('boton').readOnly = true;
         
 }
+
+function validaNumericosPrecio(event) {
+  if(event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46){
+    return true;
+   }
+   return false;        
+}
+
+function validaNumericosCantidad(event) {
+  if(event.charCode >= 48 && event.charCode <= 57){
+    return true;
+   }
+   return false;        
+}

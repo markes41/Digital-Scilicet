@@ -74,27 +74,22 @@ margin: 4rem;
 .modalidad{
 background-image: url("../img/publicity1.jpg");
 color: #e6e7e8;
-align-items: center;
+text-align: center;
 background-size: cover;
 padding: 10rem 0;
-display: flex;
+display: block;
+width: 100%;
 
 }
 
 .linea{
-border-left-width: 4px;
-border-left-color: #B20B4F;
-border-left-style: solid;
-padding: 0px 256px 0px 24px;
-text-align: left;
 font-size: 1.2rem;
+width: 100%;
 }
 
 .distancia{
-text-align: right;
 margin-right: 1rem;
 font-size: 48px;
-padding: 0px 24px 0px 256px;
 }
 
 .row{
@@ -210,6 +205,11 @@ padding: .5rem 1rem;
 .imgCategorias{
   margin-left: 40px;
   margin-bottom: 40px;
+  padding: 1rem;
+}
+
+.row{
+  text-align: center;
 }
 
 .panelEmpresas{
@@ -263,7 +263,7 @@ padding: .5rem 1rem;
 }
 
 .profile-card{
-  width: 400px;
+  width: 100%;
   text-align: center;
   border-radius: 8px;
   overflow: hidden;
