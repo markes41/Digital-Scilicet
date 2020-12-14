@@ -1,0 +1,37 @@
+@model Curso
+@section Styles{
+     <link rel="stylesheet" href="~/css/contacto.css">
+}
+
+
+<form class="contact-form" action="@Url.Action("ActionEditarCurso", "Curso")" method="POST">
+    <input type="hidden" name="ID" value="@Model.ID">
+    <input type="text" class="contact-form-text" name="titulo" value="@Model.Titulo" required>
+    <input type="text" class="contact-form-text" name="precio" value="@Model.Precio" required onkeypress='return validaNumericosPrecio(event)'>
+    <input type="text" class="contact-form-text" name="url" value="@Model.Url" required>
+    <input type="text" class="contact-form-text" name="cantidad" value="@Model.CantidadVideos" required onkeypress='return validaNumericosCantidad(event)'>
+    <input type="text" class="contact-form-text" name="autor" value="@Model.Autor" required>
+    <div class="custom-select" style="width:200px;">
+          <select name="categoria" required>
+          <option value="1">Base de Datos</option>
+          <option value="2">Desarrollo de Videojuegos</option>
+          <option value="4">Desarrollo Mobile</option>
+          <option value="3">Desarrollo Web</option>
+          </select>
+     </div>
+     <div class="custom-select" style="width:200px;">
+          <select name="idioma" required>
+          <option value="Español">Español</option>
+          <option value="Inglés">Inglés</option>
+          <option value="Portugués">Portugués</option>
+          </select>
+     </div>
+     <div class="custom-select" style="width:200px;">
+          <select name="subtitulos" required>
+          <option value="Si">Si</option>
+          <option value="No">No</option>
+          </select>
+     </div>
+    <textarea class="contact-form-text" name="descripcion" required>@Model.Descripcion</textarea>
+    <input type="submit" class="contact-form-btn" value="Editar Curso">
+</form>

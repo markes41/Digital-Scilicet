@@ -2,9 +2,12 @@
 @section Styles{
     <link rel="stylesheet" href="~/css/infoCurso.css">
 }
+@{
+    bool editarCurso = (ViewBag.editarCurso != null);
+}
 
 <div class="container">
-            <div class="header-info">
+            
                     <div class="header-main">
                         <h2>@Model.Titulo</h2>
                         <div class="autor">
@@ -12,7 +15,11 @@
                             <p class="autor-name">@Model.Autor</p>
                         </div>
                     </div>
-                </div>
+                
+    @if(editarCurso)
+    {
+        <a href="/curso/editarcurso/@Model.ID">Editar curso</a>
+    }
                 
                 <hr>
     <div class="row">

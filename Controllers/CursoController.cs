@@ -123,8 +123,25 @@ namespace Digital_Scilicet.Controllers
         }
         public IActionResult CursoInformacion(int ID)
         {
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
             Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
-            return View(curso);
+
+            if(usuario != null)
+            {
+                if(usuario.Rol.Equals("Administrador") && usuario.Rol != null)
+                {
+                    ViewBag.editarCurso = true;
+                    return View(curso);
+                }
+                else
+                {
+                    return View(curso);
+                }
+            }
+            else
+            {
+                return View(curso);
+            }
         }
         public IActionResult ComprarCurso(int ID)
         {
@@ -229,11 +246,57 @@ namespace Digital_Scilicet.Controllers
             }
             
         }
+        public IActionResult EditarCurso(long ID)
+        {
+            Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
+            Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
 
-        public JsonResult TestUser()
+            if(usuario != null && curso != null)
+            {
+                if(usuario.Rol.Equals("Administrador"))
+                {
+                    return View(curso);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+        public IActionResult ActionEditarCurso(int ID, string titulo, string descripcion, double precio, int categoria, string url, string idioma, string subtitulos, int cantidad, string autor)
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-            return Json(usuario);
+            if(usuario != null)
+            {
+                if(usuario.Rol.Equals("Administrador") && usuario.Rol != null)
+                {
+                    Curso curso = db.Cursos.FirstOrDefault(c => c.ID == ID);
+                    curso.Titulo = titulo;
+                    curso.Descripcion = descripcion;
+                    curso.Precio = precio;
+                    curso.Categoria = categoria;
+                    curso.Url = url;
+                    curso.Idioma = idioma;
+                    curso.Subtitulos = subtitulos;
+                    curso.CantidadVideos = cantidad;
+                    curso.Autor = autor;
+                    db.Cursos.Update(curso);
+                    db.SaveChanges();
+                    return View("Cursos", db.Cursos.ToList());
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
