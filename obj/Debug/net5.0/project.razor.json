@@ -15613,6 +15613,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Shared\\_LayoutAdministrador.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutAdministrador.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Mark\\Documents\\GitHub\\DigitalScilicet\\Views\\Curso\\NuevoCurso.cshtml",
       "TargetPath": "Views\\Curso\\NuevoCurso.cshtml",
       "FileKind": "mvc"

@@ -29,13 +29,17 @@ border-color: #1861ac;
 
 .btnSaberMas{
 padding: 1rem 4rem;
-margin: 1rem auto;
+margin: 2rem auto;
 font-size: 1rem;
+}
+
+.btnSaberMas:hover{
+  text-decoration: none;
 }
 
 .parrafoCursos{
 background-image: url("../img/header.jpg");
-padding: 16.5rem 0;
+padding: 18rem 0;
 font-size: 1.8rem;
 color: #e6e6e6;
 background-size: cover;

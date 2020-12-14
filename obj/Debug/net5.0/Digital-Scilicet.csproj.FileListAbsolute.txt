@@ -351,3 +351,4 @@ C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Curs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Curso\NuevoCurso.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Curso\VerCurso.cshtml.g.cs
 C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Curso\EditarCurso.cshtml.g.cs
+C:\Users\Mark\Documents\GitHub\DigitalScilicet\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAdministrador.cshtml.g.cs

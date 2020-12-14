@@ -2,9 +2,17 @@
 
 @{
     string user = this.Context.Session.GetString("UsuarioLogueado");
+    bool stringExists = false;
+    if(user != null)
+    {
+        stringExists = user.Contains("Administrador");
+    }
 
     if(string.IsNullOrEmpty(user))
         Layout = "_LayoutWithoutUser";
+    else if(stringExists)
+        Layout = "_LayoutAdministrador";
     else
         Layout = "_LayoutWithUser";
+        
 }

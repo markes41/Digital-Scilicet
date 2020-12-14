@@ -118,12 +118,38 @@
     border-radius: 20px;
     cursor: pointer;
     transition: 0.5s;
-    margin: 0 40%;
+    margin: 0 31%;
     outline: none;
   }
   .contact-form-btn:hover{
     background: #B20B4F;
   }  
+
+  select{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    border-radius: 30px;
+    border: 2px solid rgb(104, 104, 104);
+    background: #ffffff;
+    padding: 15px 25px;
+    outline: none;
+    color: rgb(104, 104, 104);
+    transition: 0.5s;
+  }
+
+  .subtitulos-curso, .idioma-curso, .categoria-curso{
+    text-align: center;
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .titulo-curso{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
   
   @media screen and (max-width:800px) {
     .contact-info{

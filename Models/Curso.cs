@@ -27,5 +27,6 @@ namespace Cursos.Models
         public List<Usuario> Owner { get; set; }
         public string Url { get; set;}
         public string Autor { get; set; }
+        public string UrlImage { get; set; }
     }
 }

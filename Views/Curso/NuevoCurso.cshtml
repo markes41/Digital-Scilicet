@@ -9,32 +9,35 @@
      @if(existeCurso){
           <iframe onload="cursoExist()" src="/default.asp" style="position: absolute; top: -1000px;"></iframe>
     }
+    <p class="titulo-curso">Crear Curso</p>
     <input type="text" class="contact-form-text" name="nombre" placeholder="Nombre del curso" required>
     <input type="text" class="contact-form-text" name="precio" placeholder="Precio del curso" required onkeypress='return validaNumericosPrecio(event)'>
     <input type="text" class="contact-form-text" name="url" placeholder="Url del video" required>
     <input type="text" class="contact-form-text" name="cantidad" placeholder="Cantidad de videos" required onkeypress='return validaNumericosCantidad(event)'>
     <input type="text" class="contact-form-text" name="autor" placeholder="Nombre del autor del curso" required>
-    <div class="custom-select" style="width:200px;">
-          <select name="categoria" required>
-          <option value="1">Base de Datos</option>
-          <option value="2">Desarrollo de Videojuegos</option>
-          <option value="4">Desarrollo Mobile</option>
-          <option value="3">Desarrollo Web</option>
-          </select>
-     </div>
-     <div class="custom-select" style="width:200px;">
-          <select name="idioma" required>
-          <option value="Español">Español</option>
-          <option value="Inglés">Inglés</option>
-          <option value="Portugués">Portugués</option>
-          </select>
-     </div>
-     <div class="custom-select" style="width:200px;">
-          <select name="subtitulos" required>
-          <option value="Si">Si</option>
-          <option value="No">No</option>
-          </select>
-     </div>
+    <input type="text" class="contact-form-text" name="urlimagen" placeholder="Url de la imagen del curso" required>
+     
+     <p class="categoria-curso">Categoria del curso</p>
+     <select name="categoria" required>
+     <option value="1">Base de Datos</option>
+     <option value="2">Desarrollo de Videojuegos</option>
+     <option value="4">Desarrollo Mobile</option>
+     <option value="3">Desarrollo Web</option>
+     </select>
+
+     <p class="idioma-curso">Idioma del curso</p>
+     <select name="idioma" required>
+     <option value="Español">Español</option>
+     <option value="Inglés">Inglés</option>
+     <option value="Portugués">Portugués</option>
+     </select>
+
+     <p class="subtitulos-curso">¿El curso tiene subtítulos?</p>
+     <select name="subtitulos" required>
+     <option value="Si">Si</option>
+     <option value="No">No</option>
+     </select>
+
     <textarea class="contact-form-text" name="descripcion" placeholder="Descripción del curso" required></textarea>
     <input type="submit" class="contact-form-btn" value="Crear">
   </form>

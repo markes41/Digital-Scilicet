@@ -76,7 +76,7 @@ namespace Digital_Scilicet.Controllers
         }
         public IActionResult RegistrarUsuario(string mail, string nombre, string username, string password, string claveadmin)
         {
-            Usuario usuarioCheck = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail) || u.Username.Equals(username));
+            Usuario usuarioCheck = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail) || u.Username.ToLower().Equals(username.ToLower()));
             string clave = "qwerty";
             string rol;
 

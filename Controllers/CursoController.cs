@@ -73,7 +73,7 @@ namespace Digital_Scilicet.Controllers
             
         }
 
-        public IActionResult CrearCurso(string nombre, string descripcion, double precio, int categoria, string url, string idioma, string subtitulos, int cantidad, string autor)
+        public IActionResult CrearCurso(string nombre, string descripcion, double precio, int categoria, string url, string idioma, string subtitulos, int cantidad, string autor, string urlimagen)
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
             Curso curso = db.Cursos.FirstOrDefault(c => c.Titulo == nombre || c.Url == url);
@@ -94,7 +94,8 @@ namespace Digital_Scilicet.Controllers
                             Idioma = idioma,
                             Subtitulos = subtitulos,
                             CantidadVideos = cantidad,
-                            Autor = autor
+                            Autor = autor,
+                            UrlImage = urlimagen
                         };
                         db.Cursos.Add(nuevoCurso);
                         db.SaveChanges();
@@ -255,7 +256,7 @@ namespace Digital_Scilicet.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-        public IActionResult ActionEditarCurso(int ID, string titulo, string descripcion, double precio, int categoria, string url, string idioma, string subtitulos, int cantidad, string autor)
+        public IActionResult ActionEditarCurso(int ID, string titulo, string descripcion, double precio, int categoria, string url, string idioma, string subtitulos, int cantidad, string autor, string urlimagen)
         {
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
             if(usuario != null)
@@ -272,6 +273,7 @@ namespace Digital_Scilicet.Controllers
                     curso.Subtitulos = subtitulos;
                     curso.CantidadVideos = cantidad;
                     curso.Autor = autor;
+                    curso.UrlImage = urlimagen;
                     db.Cursos.Update(curso);
                     db.SaveChanges();
                     return View("Cursos", db.Cursos.ToList());

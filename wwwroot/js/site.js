@@ -123,7 +123,7 @@ function comprobar()
 }
 
 function validaNumericosPrecio(event) {
-  if(event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46){
+  if(event.charCode >= 48 && event.charCode <= 57 || event.charCode == 44){
     return true;
    }
    return false;        

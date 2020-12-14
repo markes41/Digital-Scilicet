@@ -127,7 +127,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin: 0 20px;
+    margin: 15px 20px;
     filter: grayscale(100%);
     transition: .3s;
     cursor: pointer;
@@ -176,7 +176,7 @@
     }
 
     .tituloProfesor, .subtituloProfesor, .textoProfesor, 
-    .tituloAprovechar, .subtituloAprovechar, .textoAprovechar{
+    .subtituloAprovechar, .textoAprovechar{
       text-align: center;
     }
 
@@ -184,11 +184,21 @@
       width: 100%;
       height: 500px;
     }
+
+    .tituloAprovechar{
+      margin-top: 1.5rem;
+      text-align: center;
+    }
   }
 
   @media (max-width: 767px){
     .tituloProfesor, .subtituloProfesor, .textoProfesor{
       text-align: center;
       padding: 1rem;
+    }
+
+    .tituloAprovechar{
+      margin-top: 1.5rem;
+      text-align: center;
     }
   }
