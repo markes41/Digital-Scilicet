@@ -148,24 +148,13 @@ namespace Digital_Scilicet.Controllers
             Curso curso = db.Cursos.Include(c => c.Owner).FirstOrDefault(c => c.ID == ID);
             Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
             
+
             if(usuario != null)
-            {  
-                usuario = db.Usuarios.Include(u => u.Cursos).FirstOrDefault(u => u.Mail.Equals(usuario.Mail));          
-                var tieneCurso = false;
-                for(int i = 0; i < curso.Owner.Count; i++)
+            {
+                if(curso != null)
                 {
-                    if(curso.Owner.ElementAt(i) == usuario)
-                    {
-                        tieneCurso = true;
-                        break;
-                    }
-                }
-
-                
-                if(tieneCurso == false)
-                {
-                    if(curso != null && usuario != null)
-
+                    Usuario userTieneCurso = curso.Owner.FirstOrDefault(c => c.Mail.Equals(usuario.Mail));
+                    if(userTieneCurso == null)
                     {
                         curso.Owner.Add(usuario);
                         db.Cursos.Update(curso);
@@ -175,12 +164,12 @@ namespace Digital_Scilicet.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Login", "Home");
+                        ViewBag.tieneCurso = true;
+                        return View("Cursos", db.Cursos.ToList());
                     }
                 }
                 else
                 {
-                    ViewBag.tieneCurso = true;
                     return View("Cursos", db.Cursos.ToList());
                 }
             }
@@ -188,7 +177,6 @@ namespace Digital_Scilicet.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-            
         }
         public IActionResult MisCursos()
         {   
