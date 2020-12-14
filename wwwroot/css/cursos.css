@@ -14,6 +14,7 @@
 
 .card{
     box-shadow: rgba(31, 31, 31, 0.12) 0px 1px 6px, rgba(31, 31, 31, 0.12) 0px 1px 4px;
+    width: 21rem;
 }
 
 .card-header{
@@ -34,6 +35,9 @@
 
 .card-text{
     color: rgb(117, 117, 117);
+}
+.card-title{
+  width: 19.165rem;
 }
 
 .footer-precio{
@@ -94,7 +98,7 @@
 }
 
 .slick-slide img {
-  width: 100%;
+  width: 21rem;
 }
 
 .slick-prev:before,
@@ -118,4 +122,10 @@
 
 .slick-prev:before, .slick-next:before{
 	color: #818181;
+}
+@media (max-width: 767px){
+
+  .carrito-btn, .info-btn{
+    position: relative;
+  }
 }
