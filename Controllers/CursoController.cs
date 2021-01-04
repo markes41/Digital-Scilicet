@@ -113,7 +113,7 @@ namespace Digital_Scilicet.Controllers
                 {
                     return RedirectToAction("Login", "Home");
                 }
-                }
+            }
             else
             {
                 ViewBag.autorizado = true;
